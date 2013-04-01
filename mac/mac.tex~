@@ -1,0 +1,5 @@
+\section{Windows}
+
+Officially, the pbdR team does not support gaming consoles.  However, it is possible to install pbdR packages on Windows.
+
+In addition to having R installed, we assume that you have R and a build environment already installed.  For 

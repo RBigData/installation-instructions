@@ -1,0 +1,95 @@
+\documentclass[a4paper,11pt]{article}
+
+\include{_all/style}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in]{geometry}
+
+
+\title{}
+\title{\Huge Setting Up a \proglang{pbdR} Environment\\[.3cm] 
+  {\LARGE Installing MPI, \proglang{R}, and \proglang{pbdR}}}
+
+\author{
+\begin{minipage}{\textwidth}
+\centering
+%
+% The pbdR Core Team\\[.8cm]
+%
+Drew Schmidt\\
+{\small\emph{Remote Data Analysis and Visualization Center,\\
+University of Tennessee, Knoxville}}\\[.4cm]
+%%%
+Wei-Chen Chen\\
+{\small\emph{Computer Science and Mathematics Division, \\
+Oak Ridge National Laboratory}}\\[.4cm]
+%%%
+Pragneskumar Patel\\
+{\small\emph{Remote Data Analysis and Visualization Center,\\
+University of Tennessee, Knoxville}}\\[.4cm]
+%
+George Ostrouchov\\
+{\small\emph{Computer Science and Mathematics Division, \\
+Oak Ridge National Laboratory}}
+%%%
+\\[2.5in]
+Version 1.0
+%
+\end{minipage}
+}
+
+
+\begin{document}
+
+
+\prebodyheadfoot
+
+\begin{textblock*}{0mm}(-10.5mm,-8mm)
+\includegraphics[scale=1.07]{./_all/cover/cover_2}
+\end{textblock*}
+
+\newpage\ \newpage
+
+\date{}
+\maketitle
+
+%%%%%%%%%%%%%%%%%
+\ \vfill
+
+\copyright\ 2012 pbdR Core Team.  All rights reserved.
+
+Permission is granted to make and distribute verbatim copies of this vignette and its source provided the copyright notice and this permission notice are preserved on all copies.
+
+This publication was typeset using \LaTeX.  
+
+%%%%%%%%%%%%%%%%%
+
+\pagenumbering{roman}
+\newpage
+\fancyhf[C]{CONTENTS}
+\fancyhf[R]{\thepage }
+\fancyfoot{}
+\tableofcontents
+
+% ----------------------
+% Body
+% ----------------------
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{fancy}
+
+% Body header/footer style
+\bodyheadfoot
+
+
+
+\include{_all/intro}
+
+% \include{linux/linux}
+% \include{mac/mac}
+\include{windows/windows}
+
+
+
+\end{document}
