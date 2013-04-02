@@ -211,10 +211,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% output control
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{ifthen}
-\newcounter{include_sshots}
-\setcounter{include_sshots}{0}
+\newcounter{include_sshots}{0}
 
-\newcommand{\sshots}[1]{\ifthenelse{\equal{\value{include_sshots}}{0}}{}{#1}}
+\newcommand{\sshots}{\ifthenelse{\equal{include_sshots}{0}}
 
-\newcommand{\sshot}[1]{\sshots{\begin{center}\includegraphics[scale=.7]{#1}\end{center}}}

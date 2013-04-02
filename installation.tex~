@@ -1,8 +1,10 @@
 \documentclass[a4paper,11pt]{article}
 
-\include{_all/style}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=0.75in]{geometry}
+\input{_all/style}
+
+
+\setcounter{include_sshots}{0}
+
 
 
 \title{}
@@ -55,9 +57,9 @@ Version 1.0
 %%%%%%%%%%%%%%%%%
 \ \vfill
 
-\copyright\ 2012 pbdR Core Team.  All rights reserved.
+\copyright\ 2013 pbdR Core Team.  All rights reserved.
 
-Permission is granted to make and distribute verbatim copies of this vignette and its source provided the copyright notice and this permission notice are preserved on all copies.
+Permission is granted to make and distribute verbatim copies of this guide and its source provided the copyright notice and this permission notice are preserved on all copies.
 
 This publication was typeset using \LaTeX.  
 
@@ -84,12 +86,11 @@ This publication was typeset using \LaTeX.
 
 
 
-\include{_all/intro}
+\input{_all/intro}
 
-% \include{linux/linux}
-% \include{mac/mac}
-\include{windows/windows}
-
+% \input{linux/linux}
+% \input{mac/mac}
+\input{windows/windows}
 
 
 \end{document}

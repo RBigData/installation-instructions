@@ -217,4 +217,4 @@
 
 \newcommand{\sshots}[1]{\ifthenelse{\equal{\value{include_sshots}}{0}}{}{#1}}
 
-\newcommand{\sshot}[1]{\sshots{\begin{center}\includegraphics[scale=.7]{#1}\end{center}}}
+\newcommand{\sshot}[1]{\sshots{\begin{center}\includegraphics[scale=.8]{#1}\end{center}}}
