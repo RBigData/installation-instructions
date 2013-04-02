@@ -2,20 +2,31 @@
 
 \input{_all/style}
 
+%%% Document version
+% Major
+\setcounter{ver_major}{1}
+% Minor
+\setcounter{ver_minor}{0}
 
+
+% Include screenshots
 \setcounter{include_sshots}{1}
+% Include cover
+\setcounter{make_cover}{1}
 
 
 
-\title{}
+
+
+
 \title{\Huge Setting Up a \proglang{pbdR} Environment\\[.3cm] 
-  {\LARGE Installing MPI, \proglang{R}, and \proglang{pbdR}}}
+  {\LARGE Installing MPI, \proglang{R}, and \proglang{pbdR}\\[.4cm]Version \printversion}}
 
 \author{
 \begin{minipage}{\textwidth}
 \centering
 %
-% The pbdR Core Team\\[.8cm]
+\vspace{1cm}Prepared by the pbdR Core Team:\\[.8cm]
 %
 Drew Schmidt\\
 {\small\emph{Remote Data Analysis and Visualization Center,\\
@@ -33,9 +44,6 @@ George Ostrouchov\\
 {\small\emph{Computer Science and Mathematics Division, \\
 Oak Ridge National Laboratory}}
 %%%
-\\[2.5in]
-Version 1.0
-%
 \end{minipage}
 }
 
@@ -45,11 +53,13 @@ Version 1.0
 
 \prebodyheadfoot
 
-\begin{textblock*}{0mm}(-10.5mm,-8mm)
-\includegraphics[scale=1.07]{./_all/cover/cover_2}
-\end{textblock*}
+\ifthenelse{\equal{\value{make_cover}}{0}}{}{
+  \begin{textblock*}{0mm}(-10.5mm,-8mm)
+  \includegraphics[scale=1.07]{./_all/cover/cover_2}
+  \end{textblock*}
+  \newpage\ \newpage
+}
 
-\newpage\ \newpage
 
 \date{}
 \maketitle
