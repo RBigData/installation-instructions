@@ -218,3 +218,12 @@
 \newcommand{\sshots}[1]{\ifthenelse{\equal{\value{include_sshots}}{0}}{}{#1}}
 
 \newcommand{\sshot}[1]{\sshots{\begin{center}\includegraphics[scale=.7]{#1}\end{center}}}
+
+
+\newcounter{make_cover}
+\setcounter{make_cover}{1}
+
+\newcounter{ver_major}
+\newcounter{ver_minor}
+
+\newcommand{\printversion}{\arabic{ver_major}.\arabic{ver_minor}}
