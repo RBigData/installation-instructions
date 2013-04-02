@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Setting Up a pbdR Environment
+Installing MPI, R, and pbdR
+Version 1.0</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="index.tex"> 
+<meta name="date" content="2013-04-02 14:18:00"> 
+<link rel="stylesheet" type="text/css" href="index.css"> 
+</head><body 
+>
+<!--l. 61--><p class="noindent" >
+                                                                                             
+                                                                                             
+<!--l. 61--><p class="noindent" >&#x00A0;
+                                                                                             
+                                                                                             
+<div class="maketitle">
+                                                                                             
+                                                                                             
+                                                                                             
+                                                                                             
+
+<h2 class="titleHead">Setting Up a pbdR Environment<br />
+Installing MPI, R, and pbdR<br /><br />
+Version 1.0</h2>
+<div class="author" > <div class="minipage"><span 
+class="rm-lmr-12">Prepared by the pbdR Core Team:</span><br /><br />
+<span 
+class="rm-lmr-12">Drew Schmidt</span><br />
+<span 
+class="rm-lmri-10">Remote Data Analysis and Visualization Center,</span><br />
+<span 
+class="rm-lmri-10">University of Tennessee, Knoxville</span><br /><br />
+<span 
+class="rm-lmr-12">Wei-Chen Chen</span><br />
+<span 
+class="rm-lmri-10">Computer Science and Mathematics Division,</span><br />
+<span 
+class="rm-lmri-10">Oak Ridge National Laboratory</span><br /><br />
+<span 
+class="rm-lmr-12">Pragneskumar Patel</span><br />
+<span 
+class="rm-lmri-10">Remote Data Analysis and Visualization Center,</span><br />
+<span 
+class="rm-lmri-10">University of Tennessee, Knoxville</span><br /><br />
+<span 
+class="rm-lmr-12">George Ostrouchov</span><br />
+<span 
+class="rm-lmri-10">Computer Science and Mathematics Division,</span><br />
+<span 
+class="rm-lmri-10">Oak Ridge National Laboratory</span>                                                                                                   </div> </div>
+<br />
+<div class="date" ></div>
+</div>
+<!--l. 68--><p class="noindent" >&#x00A0;
+<!--l. 70--><p class="noindent" ><span 
+class="lmsy-10x-x-109">©</span>&#x00A0;2013 pbdR Core Team. All rights reserved.
+<!--l. 72--><p class="noindent" >Permission is granted to make and distribute verbatim copies of this guide and its source provided the
+copyright notice and this permission notice are preserved on all copies.
+<!--l. 74--><p class="noindent" >This publication was typeset using <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span>.
+<!--l. 79--><p class="noindent" >
+                                                                                             
+                                                                                             
+<h3 class="likesectionHead"><a 
+ id="x1-1000"></a>Contents<hr></h3>
+<div class="tableofcontents">
+<span class="sectionToc" >1 <a 
+href="#x1-20001" id="QQ2-1-2">Introduction</a></span>
+<br /><span class="sectionToc" >2 <a 
+href="#x1-30002" id="QQ2-1-3">Windows</a></span>
+<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >2.1 <a 
+href="#x1-40002.1" id="QQ2-1-4">R and Rtools</a></span>
+<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >2.1.1 <a 
+href="#x1-50002.1.1" id="QQ2-1-5">R</a></span>
+<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >2.1.2 <a 
+href="#x1-60002.1.2" id="QQ2-1-6">Rtools</a></span>
+</div>
+<!--l. 89--><p class="noindent" >
+                                                                                             
+                                                                                             
+<h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-20001"></a>Introduction<hr></h3>
+<!--l. 3--><p class="noindent" >In this guide, we will detail the necessary steps for how to install an MPI library and the pbdR packages. In
+decreasing order of difficulty, this involves
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-2002x1">Installing R (and Rtools for Windows) <a 
+ id="x1-20011"></a>
+     </li>
+     <li 
+  class="enumerate" id="x1-2004x2">Installing an MPI library<a 
+ id="x1-20032"></a>
+     </li>
+     <li 
+  class="enumerate" id="x1-2006x3">Installing pbdR</li></ol>
+<!--l. 10--><p class="noindent" >Items <a 
+href="#x1-20032">2<!--tex4ht:ref: enum:mpi --></a> and are interchangeable, and so if you already have R (and Rtools if on Windows) and/or an MPI
+library installed, then merely skip this step(s); there is no need to reinstall either.
+<!--l. 1--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-30002"></a>Windows<hr></h3>
+<!--l. 3--><p class="noindent" >Officially, the pbdR team does not support gaming consoles. However, it is possible to install pbdR packages
+on Windows.
+<!--l. 5--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x1-40002.1"></a>R and Rtools</h4>
+<!--l. 7--><p class="noindent" >The instructions and screenshots for this document are for version 2.15.1 of R, but later versions should be
+very similar, if not identical.
+<!--l. 14--><p class="noindent" >
+<h5 class="subsubsectionHead"><span class="titlemark">2.1.1   </span> <a 
+ id="x1-50002.1.1"></a>R</h5>
+<!--l. 17--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-5002x1">Download R: <a 
+href="http://cran.r-project.org/bin/windows/base/" class="url" ><span 
+class="rm-lmtt-10x-x-109">http://cran.r-project.org/bin/windows/base/</span></a> <a 
+ id="x1-50011"></a>
+     <div class="center" 
+>
+<!--l. 19--><p class="noindent" >
+<!--l. 19--><p class="noindent" ><img 
+src="windows/pics/R_1.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-5004x2">Open the saved file from <a 
+href="#x1-50011">1<!--tex4ht:ref: enum:windl --></a> above to begin the installation. At the first setup screen, click &#8217;Next&#8217; to
+     continue.
+                                                                                             
+                                                                                             
+     <div class="center" 
+>
+<!--l. 22--><p class="noindent" >
+<!--l. 22--><p class="noindent" ><img 
+src="windows/pics/R_2.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-5006x3">When prompted with the license, click &#8217;Next&#8217; to continue.
+     <div class="center" 
+>
+<!--l. 25--><p class="noindent" >
+<!--l. 25--><p class="noindent" ><img 
+src="windows/pics/R_3.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-5008x4">When prompted for the location to install R, we strongly encourage you to use the default. When you
+     have made your decision, click &#8217;Next&#8217;.
+     <div class="center" 
+>
+<!--l. 28--><p class="noindent" >
+<!--l. 28--><p class="noindent" ><img 
+src="windows/pics/R_4.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-5010x5">When prompted with the components to install, you should select a &#8217;User installation&#8217;. Then click
+     &#8217;Next&#8217;.
+     <div class="center" 
+>
+<!--l. 31--><p class="noindent" >
+<!--l. 31--><p class="noindent" ><img 
+src="windows/pics/R_5.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-5012x6">When prompted with the option to alter the startup options, we suggest selecting <span 
+class="rm-lmtt-10x-x-109">No (accept</span>
+     <span 
+class="rm-lmtt-10x-x-109">defaults)</span>. When you have made your decision, click &#8217;Next&#8217;.
+     <div class="center" 
+>
+<!--l. 34--><p class="noindent" >
+<!--l. 34--><p class="noindent" ><img 
+src="windows/pics/R_6.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-5014x7">When prompted with the start menu folder options, make your choice and then click &#8217;Next&#8217;.
+     <div class="center" 
+>
+<!--l. 37--><p class="noindent" >
+<!--l. 37--><p class="noindent" ><img 
+src="windows/pics/R_7.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-5016x8">When prompted with the additional tasks options, we suggest making sure that <span 
+class="rm-lmtt-10x-x-109">Save version number</span>
+                                                                                             
+                                                                                             
+     <span 
+class="rm-lmtt-10x-x-109">in registry </span>and <span 
+class="rm-lmtt-10x-x-109">Associate R with .RData files </span>are both <span 
+class="rm-lmbx-10x-x-109">checked</span>. When you have made your
+     decisions, click &#8217;Next&#8217;.
+     <div class="center" 
+>
+<!--l. 40--><p class="noindent" >
+<!--l. 40--><p class="noindent" ><img 
+src="windows/pics/R_8.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-5018x9">To complete the R installation, select &#8217;Finish&#8217;.
+     <div class="center" 
+>
+<!--l. 43--><p class="noindent" >
+<!--l. 43--><p class="noindent" ><img 
+src="windows/pics/R_9.png" alt="PIC"  
+></div>
+     </li></ol>
+<!--l. 51--><p class="noindent" >
+<h5 class="subsubsectionHead"><span class="titlemark">2.1.2   </span> <a 
+ id="x1-60002.1.2"></a>Rtools</h5>
+<!--l. 53--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-6002x1">Download Rtools: <a 
+href="http://cran.r-project.org/bin/windows/base/" class="url" ><span 
+class="rm-lmtt-10x-x-109">http://cran.r-project.org/bin/windows/base/</span></a> <a 
+ id="x1-60011"></a>
+     <div class="center" 
+>
+<!--l. 55--><p class="noindent" >
+<!--l. 55--><p class="noindent" ><img 
+src="windows/pics/Rtools_1.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-6004x2">Open the saved file from <a 
+href="#x1-60011">1<!--tex4ht:ref: enum:rtoolsdl --></a> above to begin the installation. At the first setup screen, click &#8217;Next&#8217; to
+     continue.
+     <div class="center" 
+>
+<!--l. 58--><p class="noindent" >
+<!--l. 58--><p class="noindent" ><img 
+src="windows/pics/Rtools_2.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-6006x3">When prompted with the license, click &#8217;Next&#8217; to continue.
+     <div class="center" 
+>
+<!--l. 61--><p class="noindent" >
+<!--l. 61--><p class="noindent" ><img 
+src="windows/pics/Rtools_3.png" alt="PIC"  
+></div>
+     </li>
+                                                                                             
+                                                                                             
+     <li 
+  class="enumerate" id="x1-6008x4">When prompted for the location to install R, we strongly encourage you to use the default. When you
+     have made your decision, click &#8217;Next&#8217;.
+     <div class="center" 
+>
+<!--l. 64--><p class="noindent" >
+<!--l. 64--><p class="noindent" ><img 
+src="windows/pics/Rtools_4.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-6010x5">When prompted with the components to install, you should select a &#8217;User installation&#8217;. Then click
+     &#8217;Next&#8217;.
+     <div class="center" 
+>
+<!--l. 67--><p class="noindent" >
+<!--l. 67--><p class="noindent" ><img 
+src="windows/pics/Rtools_5.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-6012x6">When prompted with the option to alter the startup options, we suggest selecting <span 
+class="rm-lmtt-10x-x-109">No (accept</span>
+     <span 
+class="rm-lmtt-10x-x-109">defaults)</span>. When you have made your decision, click &#8217;Next&#8217;.
+     <div class="center" 
+>
+<!--l. 70--><p class="noindent" >
+<!--l. 70--><p class="noindent" ><img 
+src="windows/pics/Rtools_6.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-6014x7">When prompted with the start menu folder options, make your choice and then click &#8217;Next&#8217;.
+     <div class="center" 
+>
+<!--l. 73--><p class="noindent" >
+<!--l. 73--><p class="noindent" ><img 
+src="windows/pics/Rtools_7.png" alt="PIC"  
+></div>
+     </li>
+     <li 
+  class="enumerate" id="x1-6016x8">To complete the Rtools installation, select &#8217;Finish&#8217;.
+     <div class="center" 
+>
+<!--l. 76--><p class="noindent" >
+<!--l. 76--><p class="noindent" ><img 
+src="windows/pics/Rtools_8.png" alt="PIC"  
+></div>
+     </li></ol>
+                                                                                             
+                                                                                             
+ 
+</body></html> 
+
+                                                                                             
+
+
