@@ -1,4 +1,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% output control
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{ifthen}
+\newcounter{include_sshots}
+\setcounter{include_sshots}{0}
+
+\newcommand{\sshots}[1]{\ifthenelse{\equal{\value{include_sshots}}{0}}{}{#1}}
+\newcommand{\sshot}[1]{\sshots{\begin{center}\includegraphics[scale=.7]{#1}\end{center}}}
+
+
+\newcounter{make_cover}
+\setcounter{make_cover}{1}
+
+\newcounter{ver_major}
+\newcounter{ver_minor}
+
+\newcommand{\printversion}{\arabic{ver_major}.\arabic{ver_minor}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% definitions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -162,6 +181,7 @@
 %   \fancyhead[L]{\slshape \rightmark}
   \fancyhead[L]{\slshape \leftmark}
   \fancyhead[R]{ \thepage\ of\ \pageref{LastPage}}
+  \fancyfoot[C]{\hrule Version \printversion}
   \renewcommand{\headrulewidth}{1pt}
   \renewcommand{\footrulewidth}{0pt}
   
@@ -206,24 +226,3 @@
 }
 
 \usepackage[absolute]{textpos}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% output control
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{ifthen}
-\newcounter{include_sshots}
-\setcounter{include_sshots}{0}
-
-\newcommand{\sshots}[1]{\ifthenelse{\equal{\value{include_sshots}}{0}}{}{#1}}
-
-\newcommand{\sshot}[1]{\sshots{\begin{center}\includegraphics[scale=.7]{#1}\end{center}}}
-
-
-\newcounter{make_cover}
-\setcounter{make_cover}{1}
-
-\newcounter{ver_major}
-\newcounter{ver_minor}
-
-\newcommand{\printversion}{\arabic{ver_major}.\arabic{ver_minor}}
