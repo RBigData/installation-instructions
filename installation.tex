@@ -2,6 +2,9 @@
 
 \input{_all/style}
 
+\input{.pic_ct} % control for whether screenshots are included or not 
+\input{.sec_ct} % control for which sections are included
+
 %%% Document version
 % Major
 \setcounter{ver_major}{1}
@@ -9,13 +12,11 @@
 \setcounter{ver_minor}{0}
 
 
-% Include screenshots
-\setcounter{include_sshots}{1}
-% Include cover
-\setcounter{make_cover}{1}
 
-
-
+%%% for testing
+% \setcounter{include_windows}{1}
+% \setcounter{include_mac}{1}
+% \setcounter{include_linux}{1}
 
 
 
@@ -98,9 +99,14 @@ This publication was typeset using \LaTeX.
 
 \input{_all/intro}
 
-% \input{linux/linux}
-% \input{mac/mac}
-\input{windows/windows}
-
+\ifthenelse{\equal{\value{include_windows}}{0}}{}{
+  \input{windows/windows}
+}
+\ifthenelse{\equal{\value{include_mac}}{0}}{}{
+  \input{mac/mac}
+}
+\ifthenelse{\equal{\value{include_linux}}{0}}{}{
+  \input{linux/linux}
+}
 
 \end{document}
