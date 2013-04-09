@@ -2,4 +2,11 @@
 \contentsline {section}{\numberline {2}Windows}{1}{section.2}
 \contentsline {subsection}{\numberline {2.1}R}{1}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Rtools}{4}{subsection.2.2}
+\contentsline {section}{\numberline {3}Mac OS X}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Installing MPI}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Installing pbdR}{7}{subsection.3.2}
+\contentsline {section}{\numberline {4}Linux and FreeBSD}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Installing R}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Installing MPI}{8}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Installing pbdR}{8}{subsection.4.3}
 \contentsfinish 

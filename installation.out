@@ -2,3 +2,10 @@
 \BOOKMARK [1][-]{section.2}{Windows}{}
 \BOOKMARK [2][-]{subsection.2.1}{R}{section.2}
 \BOOKMARK [2][-]{subsection.2.2}{Rtools}{section.2}
+\BOOKMARK [1][-]{section.3}{Mac OS X}{}
+\BOOKMARK [2][-]{subsection.3.1}{Installing MPI}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Installing pbdR}{section.3}
+\BOOKMARK [1][-]{section.4}{Linux and FreeBSD}{}
+\BOOKMARK [2][-]{subsection.4.1}{Installing R}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Installing MPI}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{Installing pbdR}{section.4}
