@@ -1,13 +1,12 @@
 \section{Running pbdR Scripts}
-This information is covered in \emph{much} more detail in the pbdDEMO vignette, and should not be considered a substitute.  However, 
-
+This information is covered in \emph{much} more detail in the pbdDEMO vignette, and should not be considered a substitute.  However, there are two key points one needs to understand in order to use pbdR tools.  Namely,
 \begin{itemize}
   \item pbdR codes are written in Single Program/Multiple Data style
   \item pbdR codes are executed in batch
 \end{itemize}
+For full details, see the pbdDEMO package vignette.
 
-
-
+Below is a simple pbdR script.  This will help you know if things are installed properly or not.  To understand what the script is doing, or to learn how to do much more substantial things, you should see the pbdDEMO package vignette.
 \begin{lstlisting}[language=rr]
 library(pbdMPI, quiet = TRUE)
 init()
@@ -19,14 +18,15 @@ comm.print(x, all.rank = TRUE)
 finalize()
 \end{lstlisting}
 
-
+To run the script, you must do so in batch (i.e., non-interactively).
+%
 \ifnum\value{mac_or_lin}=1
 On \maclin, you should execute the command:
 \begin{lstlisting}[language=sh]
 mpirun -np 2 Rscript my_script.r
 \end{lstlisting}
 \fi
-
+%
 \ifnum\value{include_windows}=1
 On Windows, you should execute the command:
 \begin{lstlisting}[language=sh]
