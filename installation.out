@@ -9,4 +9,7 @@
 \BOOKMARK [2][-]{subsection.3.1}{Installing R}{section.3}
 \BOOKMARK [2][-]{subsection.3.2}{Installing MPI}{section.3}
 \BOOKMARK [2][-]{subsection.3.3}{Installing pbdR}{section.3}
-\BOOKMARK [1][-]{section.4}{Running pbdR Scripts}{}
+\BOOKMARK [1][-]{section.4}{Installation Problems}{}
+\BOOKMARK [2][-]{subsection.4.1}{R and MPI}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{pbdR}{section.4}
+\BOOKMARK [1][-]{section.5}{Running pbdR Scripts}{}
