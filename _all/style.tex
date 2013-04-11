@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% output control
+%%%%% output control / counter and macro hell
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{ifthen}
 \newcounter{include_sshots}
@@ -22,6 +22,15 @@
 \setcounter{include_mac}{0}
 \newcounter{include_linux}
 \setcounter{include_linux}{0}
+\newcounter{mac_or_lin}
+\newcounter{mac_and_lin}
+
+\newcommand{\maclin}{
+  \ifthenelse{ \equal{\value{mac_and_lin}}{0} }{
+    \ifthenelse{ \equal{\value{include_mac}}{0} }{
+      \ifthenelse{ \equal{\value{include_linux}}{0}}{}{Linux}
+    }{Mac}}{Linux and Mac}
+}
 
 \newcommand{\printversion}{\arabic{ver_major}.\arabic{ver_minor}}
 

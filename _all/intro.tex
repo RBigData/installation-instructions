@@ -1,10 +1,27 @@
-\section{Introduction}
+\section{Quick Introduction}
 
-In this guide, we will detail the necessary steps for how to install an MPI library and the pbdR packages.  In decreasing order of difficulty, this involves
+In this guide, we will detail the necessary steps for how to set up a pbdR environment.  What follows in the remaining sections is a very lengthy list of installation instructions; however, most users should find the process fairly straight-forward, and may not need (or want) all of the details we will provide unless something goes wrong.  In any case, the short version for setting up a pbdR environment is to:
 \begin{enumerate}
-  \item Installing R (and Rtools for Windows) \label{enum:r}
-  \item Installing an MPI library\label{enum:mpi}
-  \item Installing pbdR
+  \item install R (and Rtools for Windows)\label{enum:r}; see \url{http://cran.r-project.org/}
+  \item install an MPI library\label{enum:mpi}; \url{http://www.open-mpi.org/}, or \url{http://www.mpich.org/} for Windows
+  \item install the pbdR packages; see \url{http://r-pbd.org/}
 \end{enumerate}
 
-Items \ref{enum:mpi} and \label{enum:r} are interchangeable, and so if you already have R (and Rtools if on Windows) and/or an MPI library installed, then merely skip this step(s); there is no need to reinstall either.
+Items \ref{enum:r} and \ref{enum:mpi} are interchangeable, and so if you already have R (and additionally Rtools for Windows) and/or an MPI library installed, then merely skip this/these step(s); there is no need to reinstall anything.
+
+\subsection{Installing R}
+This should be fairly painless.  R has binary packages for every operating system you have heard of (and some you haven't), and the install should go fine.  Of course, since R is open source, you are free to compile it yourself, should have have reason or need to do so.
+
+You can find both the source as well as binaries at the Comprehensive R Archive Network (CRAN): \url{http://cran.r-project.org/}.
+
+
+\subsection{Installing MPI}
+
+
+For Linux and Mac users, we recommend installing OpenMPI\footnote{\url{http://www.open-mpi.org/}}, while Windows users should install MPICH2\footnote{\url{http://www.mpich.org/}}.
+
+For more details, see the 
+
+
+\subsection{Installing pbdR Packages}
+All released pbdR packages are available on R's Comprehensive R Archive Network (CRAN)
