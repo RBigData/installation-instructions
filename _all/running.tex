@@ -1,0 +1,37 @@
+\section{Running pbdR Scripts}
+This information is covered in \emph{much} more detail in the pbdDEMO vignette, and should not be considered a substitute.  However, 
+
+\begin{itemize}
+  \item pbdR codes are written in Single Program/Multiple Data style
+  \item pbdR codes are executed in batch
+\end{itemize}
+
+
+
+\begin{lstlisting}[language=rr]
+library(pbdMPI, quiet = TRUE)
+init()
+
+x <- comm.rank()
+
+comm.print(x, all.rank = TRUE)
+
+finalize()
+\end{lstlisting}
+
+
+\ifnum\value{mac_or_lin}=1
+On \maclin, you should execute the command:
+\begin{lstlisting}[language=sh]
+mpirun -np 2 Rscript my_script.r
+\end{lstlisting}
+\fi
+
+\ifnum\value{include_windows}=1
+On Windows, you should execute the command:
+\begin{lstlisting}[language=sh]
+mpiexec.exe -np 2 Rscript my_script.r
+\end{lstlisting}
+\fi
+
+

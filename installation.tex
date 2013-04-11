@@ -14,9 +14,19 @@
 
 
 %%% for testing
-% \setcounter{include_windows}{1}
-% \setcounter{include_mac}{1}
-% \setcounter{include_linux}{1}
+\setcounter{include_windows}{1}
+\setcounter{include_mac}{0}
+\setcounter{include_linux}{1}
+
+\setcounter{include_sshots}{1}
+\setcounter{make_cover}{0}
+
+
+
+
+% counter voodoo
+\ifthenelse{\equal{\value{include_mac}}{1} \OR \equal{\value{include_linux}}{1}}{\setcounter{mac_or_lin}{1}}{}
+\ifthenelse{\equal{\value{include_mac}}{1} \AND \equal{\value{include_linux}}{1}}{\setcounter{mac_and_lin}{1}}{}
 
 
 
@@ -108,5 +118,7 @@ This publication was typeset using \LaTeX.
 \ifthenelse{\equal{\value{include_linux}}{0}}{}{
   \input{linux/linux}
 }
+
+\input{_all/running}
 
 \end{document}
