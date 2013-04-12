@@ -44,6 +44,11 @@ The instructions and screenshots for this document are for version 2.15.1 of R, 
   %
 \end{enumerate}
 
+Once \proglang{R} is finished installing, you need to install the  \href{http://cran.r-project.org/web/packages/rlecuyer/index.html}{\pkg{rlecuyer}} package.  To install it from an interactive \proglang{R} session, simply start an \proglang{R} session and issue the command
+\begin{lstlisting}[language=rr]
+install.packages("rlecuyer")
+\end{lstlisting}
+
 
 
 
@@ -76,3 +81,80 @@ The instructions and screenshots for this document are for version 2.15.1 of R, 
   \sshot{windows/pics/Rtools_8.png}
   %
 \end{enumerate}
+
+
+
+
+
+\subsection{MPICH2}
+Before proceeding, please be aware that this installation requires {\color{red}{administrative privileges}}.
+
+\begin{enumerate}
+  \item Download both the 32-bit
+  \href{http://www.mpich.org/static/tarballs/1.4.1p1/mpich2-1.4.1p1-win-ia32.msi}{mpich2-1.4.1p1-win-i32.msi} 
+  and the 64-bit
+  \href{http://www.mpich.org/static/tarballs/1.4.1p1/mpich2-1.4.1p1-win-x86-64.msi}{mpich2-1.4.1p1-win-x86-64.msi}
+  installers from: \url{http://www.mpich.org/} .\label{enum:mpich2}
+  \sshots{\begin{center}\includegraphics[scale=.5]{windows/pics/mpich2_1.png}\end{center}}
+  %
+  \item Open the saved file from \ref{enum:mpich2} above to begin the installation.  At the first setup screen, click 'Next' to continue.
+  \sshot{windows/pics/mpich2_2.png}
+  %
+  \item When prompted with the system requirements, click 'Next' to continue.
+  \sshot{windows/pics/mpich2_3.png}
+  %
+  \item When prompted with the license, click ``I agree'' and then click 'Next' to continue.
+  \sshot{windows/pics/mpich2_4.png}
+    %
+  \item When prompted with the 'Process Manager setup' screen, choose a passphrase and then click 'Next' to continue.
+  \sshot{windows/pics/mpich2_5.png}
+    %
+  \item At the 'Select Installation Folder' screen, we recommend you keep the default folders.  By default, the 32-bit application will be installed in \code{C:\textbackslash Program Files (x86)\textbackslash MPICH2\textbackslash } and the 64bit application will be installed in \code{C:\textbackslash Program Files\textbackslash MPICH2\textbackslash }.\\[.2cm] Additionally, you should make the selection for whether or not MPICH2 should be available to all users of this system or just yourself.  When you are ready to proceed, click 'Next'.
+  \sshot{windows/pics/mpich2_6.png}
+  \sshot{windows/pics/mpich2_6_1.png}
+    %
+  \item When prompted to confirm the installation, click 'Next' to proceed.
+  \sshot{windows/pics/mpich2_7.png}
+    %
+  \item To complete the MPICH2 installation, select 'Close'.
+  \sshot{windows/pics/mpich2_8.png}
+  %
+\end{enumerate}
+
+
+
+
+
+
+\subsection{pbdR}
+\begin{enumerate}
+  \item To help simplify things, we offer a simple \href{windows/build_pbdMPI.bat}{install script} which makes managing the \code{PATH} slightly simpler.  By default, this is for \proglang{R} version 2.15.3 and \pkg{pbdMPI} version 0.1-6.  If you have a different version of R or want to install a different version of \pkg{pbdMPI}, simply change lines 4 and/or 5 of the install script to match your needs.
+  \sshot{windows/pics/build_0.png}
+  %
+  \item Open a command prompt either from the start menu, or by entering the command \code{Windows key} then \code{R}, and then entering \code{cmd} in the ``run'' dialog box.
+  \sshot{windows/pics/build_1.png}
+  %
+  \item Before proceeding further, it is probably a good idea to test the installation of MPICH2.  The following commands utilize MPICH2 to do some fairly trivial things (do not copy \code{SHELL>} if you are copying and pasting from the lines below):
+  \begin{Code}
+SHELL> C:\PROGRA~1\MPICH2\bin\mpiexec -np 2 hostname.exe
+SHELL> C:\PROGRA~1\R\R-2.15.1\bin\R --vanilla --slave -e "ls()"
+SHELL> C:\PROGRA~1\R\R-2.15.1\bin\Rscript --vanilla --slave -e "ls()"
+  \end{Code}
+  \sshot{windows/pics/build_2.png}
+  %
+%   \item Next, go download and install the \href{http://cran.r-project.org/web/packages/rlecuyer/index.html}{\pkg{rlecuyer}} package.
+%   \sshot{windows/pics/build_3.png}
+  %
+  \item Download the \href{http://cran.r-project.org/src/contrib/pbdMPI_0.1-6.tar.gz}{source} for \href{http://cran.r-project.org/web/packages/pbdMPI/index.html}{\pkg{pbdMPI}} package.  Put it in the same directory as your \code{build_pbdMPI.bat} file, and then execute \code{build_pbdMPI.bat} from the command prompt to install the package.
+  \sshot{windows/pics/build_4.png}
+    %
+  \item If the process is done without errors, you can see the binary package is installed. 
+  \sshot{windows/pics/build_5.png}
+%     %
+%   \item 
+%   \sshot{windows/pics/build_6.png}
+\end{enumerate}
+
+
+
+

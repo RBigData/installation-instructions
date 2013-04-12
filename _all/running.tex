@@ -1,5 +1,7 @@
 \section{Running pbdR Scripts}
-This information is covered in \emph{much} more detail in the pbdDEMO vignette, and should not be considered a substitute.  However, there are two key points one needs to understand in order to use pbdR tools.  Namely,
+This information is covered in \emph{much} more detail in the 
+\href{http://cran.r-project.org/web/packages/pbdDEMO/index.html}{pbdDEMO} 
+vignette, and should not be considered a substitute.  However, there are two key points one needs to understand in order to use pbdR tools.  Namely,
 \begin{itemize}
   \item pbdR codes are written in Single Program/Multiple Data style
   \item pbdR codes are executed in batch
@@ -18,20 +20,20 @@ comm.print(x, all.rank = TRUE)
 finalize()
 \end{lstlisting}
 
-To run the script, you must do so in batch (i.e., non-interactively).
+To run the script, you must do so in batch (i.e., non-interactively).  First save its contents to the file \code{my_script.r}, and then open a \incmaclin{terminal}\incall{/}\incwin{command prompt}.
 %
 \ifnum\value{mac_or_lin}=1
 On \maclin, you should execute the command:
-\begin{lstlisting}[language=sh]
+\begin{Code}
 mpirun -np 2 Rscript my_script.r
-\end{lstlisting}
+\end{Code}%%%
 \fi
 %
 \ifnum\value{include_windows}=1
 On Windows, you should execute the command:
-\begin{lstlisting}[language=sh]
+\begin{Code}
 mpiexec.exe -np 2 Rscript my_script.r
-\end{lstlisting}
+\end{Code}%%%
 \fi
 
 
