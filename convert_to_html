@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 cp installation.tex index.tex
 #sed -i 's/\\vspace{[^}]*}//' index.tex
 sed -i -e 's/\\begin{lstlisting}\[language=sh\]/\\begin{verbatim}/' -e 's/\end{lstlisting}%%%/\end{verbatim}/' index.tex

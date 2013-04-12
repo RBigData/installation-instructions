@@ -22,15 +22,18 @@
 \setcounter{include_mac}{0}
 \newcounter{include_linux}
 \setcounter{include_linux}{0}
+\newcounter{include_all}
+\setcounter{include_all}{0}
 \newcounter{mac_or_lin}
 \newcounter{mac_and_lin}
+
 
 \newcommand{\maclin}{
   \ifthenelse{\equal{\value{mac_and_lin}}{0}}{\ifthenelse{\equal{\value{include_mac}}{0}}{\ifthenelse{\equal{\value{include_linux}}{0}}{}{Linux}}{Mac}}{Linux and Mac}}
 
 \newcommand{\incwin}[1]{\ifthenelse{\equal{\value{include_windows}}{1}}{#1}{}}
 \newcommand{\incmaclin}[1]{\ifthenelse{\equal{\value{mac_or_lin}}{1}}{#1}{}}
-  
+\newcommand{\incall}[1]{\ifthenelse{\equal{\value{include_all}}{1}}{#1}{}}
 
 \newcommand{\printversion}{\arabic{ver_major}.\arabic{ver_minor}}
 
@@ -110,7 +113,11 @@
 %%%%% lstlisting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{listings}
+\usepackage{ifpdf}
 
+\lstdefinelanguage{sh}{basicstyle=\ttfamily\color{white}, backgroundcolor=\color{black}, breaklines=true} 
+
+\ifpdf
 \lstdefinelanguage{rr}{language=R, 
                       basicstyle=\ttfamily\color{black}, 
 		      backgroundcolor=\color{grayish}, 
@@ -136,33 +143,71 @@
 %                       escapeend={\endminipage\end{lrbox}\llap{\raisebox{0pt}[0pt][0pt]{\box0}\hspace{\comsep}}}
 } 
 
+\else
 
-\lstdefinelanguage{ft}{
-  language=[90]Fortran,
-  basicstyle=\ttfamily,
-                      keywordstyle=\color{blue},
-		      commentstyle=\color{dkgreen},
-  morecomment=[l]{!\ }
-}
+\lstdefinelanguage{rr}{basicstyle=\ttfamily\color{black}, 
+		       backgroundcolor=\color{grayish}, 
+		       frame=single, 
+		       breaklines=true, 
+		       tabsize=2
+%                       keywordstyle=\color{blue},
+% 		      commentstyle=\color{dkgreen},
+% 		      stringstyle=\color{mauve}
+} 
+
+\fi
+
+
+\lstnewenvironment{rr}{%
+  \lstset{%
+     language = R,%
+      style    = default,%
+    }%
+ }{}
 
 
 
-\lstset{numbers=none,numberstyle=\footnotesize\ttfamily,
-        frame=single,frameround=tttt,language=R,
-        showspaces=false,showstringspaces=false,
-        breaklines=true,breakatwhitespace=true,
-        basicstyle=\small\ttfamily}
+
+
+% \lstdefinelanguage{ft}{
+%   language=[90]Fortran,
+%   basicstyle=\ttfamily,
+%                       keywordstyle=\color{blue},
+% 		      commentstyle=\color{dkgreen},
+%   morecomment=[l]{!\ }
+% }
+
+
+
+% \lstset{numbers=none,numberstyle=\footnotesize\ttfamily,
+%         frame=single,frameround=tttt,language=R,
+%         showspaces=false,showstringspaces=false,
+%         breaklines=true,breakatwhitespace=true,
+%         basicstyle=\small\ttfamily}
 %\lstset{literate={<-}{{$\leftarrow$}}1}
+% \makeatletter
+% \let\Code\@undefined
+% \let\CodeInput\@undefined
+% \let\CodeOutput\@undefined
+% \makeatother
+% \lstnewenvironment{Command}[1][title=Shell Command]{\lstset{#1}}{}
+% \lstnewenvironment{Code}[1][title=R Script]{\lstset{#1}}{}
+% \lstnewenvironment{CodeOutput}[1][title=R Output]{\lstset{#1}}{}
+% \lstnewenvironment{Error}[1][]{
+%   \lstset{title=Error Message,basicstyle=\small\ttfamily}\color{Red}}{}
+  
+
 \makeatletter
 \let\Code\@undefined
 \let\CodeInput\@undefined
 \let\CodeOutput\@undefined
 \makeatother
-\lstnewenvironment{Command}[1][title=Shell Command]{\lstset{#1}}{}
-\lstnewenvironment{Code}[1][title=R Script]{\lstset{#1}}{}
-\lstnewenvironment{CodeOutput}[1][title=R Output]{\lstset{#1}}{}
+\lstnewenvironment{Command}[1][]{\lstset{#1}}{}
+\lstnewenvironment{Code}[1][]{\lstset{#1}}{}
+\lstnewenvironment{CodeOutput}[1][]{\lstset{#1}}{}
 \lstnewenvironment{Error}[1][]{
   \lstset{title=Error Message,basicstyle=\small\ttfamily}\color{Red}}{}
+  
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Chapter headings

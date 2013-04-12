@@ -5,6 +5,7 @@
 \input{.pic_ct} % control for whether screenshots are included or not 
 \input{.sec_ct} % control for which sections are included
 
+
 %%% Document version
 % Major
 \setcounter{ver_major}{1}
@@ -14,19 +15,19 @@
 
 
 %%% for testing
-% \setcounter{include_windows}{1}
+\setcounter{include_windows}{1}
 % \setcounter{include_mac}{0}
 % \setcounter{include_linux}{0}
-% 
-% \setcounter{include_sshots}{0}
+% % 
+\setcounter{include_sshots}{0}
 % \setcounter{make_cover}{0}
-
 
 
 
 % counter voodoo
 \ifthenelse{\equal{\value{include_mac}}{1} \OR \equal{\value{include_linux}}{1}}{\setcounter{mac_or_lin}{1}}{}
 \ifthenelse{\equal{\value{include_mac}}{1} \AND \equal{\value{include_linux}}{1}}{\setcounter{mac_and_lin}{1}}{}
+\ifthenelse{\equal{\value{include_mac}}{1} \AND \equal{\value{include_linux}}{1} \AND \equal{\value{include_windows}}{1}}{\setcounter{include_all}{1}}{}
 
 
 
@@ -60,6 +61,39 @@ Oak Ridge National Laboratory}}
 
 
 \begin{document}
+% \ifpdf \else
+% \Css{div.lstlisting{
+%     font-family: monospace;
+%     white-space: nowrap; margin-top:0.5em;
+%     margin-bottom:0.5em;
+%     color: black;
+%     background-color: gray;
+%   } 
+%   div.verbatim{
+%     font-family: monospace;
+%     white-space: nowrap; margin-top:0.5em;
+%     margin-bottom:0.5em;
+%     color: white;
+%     background-color: black;
+%   }
+% }
+\ifpdf \else
+\Css{div.lstlisting{font-family: monospace;
+    white-space: nowrap; margin-top:0.5em;
+    margin-bottom:0.5em;
+    color: green ;
+    background-color: black;}}
+
+\Preamble{xhtml}
+  \Configure{graphics*}  
+         {pdf}  
+         {\Needs{"convert \csname Gin@base\endcsname.pdf  
+                               \csname Gin@base\endcsname.png"}%  
+          \Picture[pict]{\csname Gin@base\endcsname.png}%  
+         }  
+\fi
+
+
 
 
 \prebodyheadfoot
@@ -120,6 +154,6 @@ This publication was typeset using \LaTeX.
 }
 
 \input{_all/problems}
-% \input{_all/running}
+\input{_all/running}
 
 \end{document}
