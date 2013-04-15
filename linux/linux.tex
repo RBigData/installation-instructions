@@ -2,67 +2,141 @@
 
 Before starting, make sure you have 
 
+On Linux, unless you have a specific reason not to (in which case, most of this document is probably unnecessary for you), we recommend that you install \proglang{R} and MPI through your distribution's package repository.
+
+If instructions for your favorite distribution are not listed below, we would be happy to incorporate submissions/corrections.
+
+
+terminal
+
+
 
 \subsection{Installing R}
 
+\subsubsection{Installing from a Package Repository}
+
 If your distribution is Debian-derived, including Debian, Ubuntu, and Mint:
-\begin{lstlisting}[title=Installing OpenMPI on Debian Linux]
+\begin{lstlisting}[language=sh]
 apt-get install r-base-dev
 \end{lstlisting}
 
-If your distribution is ``Redhat-ish'', including Fedora and CentOS:
-\begin{lstlisting}[title=Installing OpenMPI on Fedora Linux]
+\vspace{.4cm}
+If your distribution is ``Redhat-ish'', including Redhat, Fedora, and CentOS:
+\begin{lstlisting}[language=sh]
 yum install R-devel
 \end{lstlisting}
 
+\vspace{.4cm}
 If your distribution is OpenSUSE:
-\begin{lstlisting}[title=Installing OpenMPI on OpenSUSE Linux]
+\begin{lstlisting}[language=sh]
 zypper install R-patched-devel
 \end{lstlisting}
 
+\vspace{.4cm}
 If you are using FreeBSD:
-\begin{lstlisting}[title=Installing OpenMPI on FreeBSD]
+\begin{lstlisting}[language=sh]
 cd /usr/ports/math/R && make install clean
 \end{lstlisting}
 
 
+
+\subsubsection{Compiling from Source}
+
+You can find \proglang{R} sources from \url{http://cran.r-project.org/sources.html}
+
+Generally, it should be enough to simply execute
+\begin{lstlisting}[language=sh]
+./configure && make && make install
+\end{lstlisting}
+without problems.
+
+
+
+
+
+
+
+
+
 \subsection{Installing MPI}
+
+\subsubsection{Installing from a Package Repository}
 
 For these systems, we recommend using OpenMPI.  To install OpenMPI
 
 If your distribution is Debian-derived, including Debian, Ubuntu, and Mint:
-\begin{lstlisting}[title=Installing OpenMPI on Debian Linux]
+\begin{lstlisting}[language=sh]
 apt-get install openmpi-bin libopenmpi-dev
 \end{lstlisting}
 
+\vspace{.4cm}
 If your distribution is ``Redhat-ish'', including Fedora and CentOS:
-\begin{lstlisting}[title=Installing OpenMPI on Fedora Linux]
+\begin{lstlisting}[language=sh]
 yum install openmpi openmpi-devel
 \end{lstlisting}
 
+\vspace{.4cm}
 If your distribution is OpenSUSE:
-\begin{lstlisting}[title=Installing OpenMPI on OpenSUSE Linux]
+\begin{lstlisting}[language=sh]
 zypper install openmpi-devel lam-devel
 \end{lstlisting}
 
+\vspace{.4cm}
 If you are using FreeBSD:
-\begin{lstlisting}[title=Installing OpenMPI on FreeBSD]
+\begin{lstlisting}[language=sh]
 cd /usr/ports/net/openmpi && make install clean
 \end{lstlisting}
 
 
 
+\subsubsection{Compiling from Source}
+If you want to install OpenMPI from source (I don't really recommend this unless this document is irrelevant to you in the first place), then the sources are available here:  \url{http://www.open-mpi.org/software/ompi/v1.6/} .
 
-You can test the installation of OpenMPI via the command:
 
-\begin{lstlisting}[title=Shell Command]
-mpiexec - np 2 hostname
-\end{lstlisting}
+
+
+
+
 
 
 
 \subsection{Installing pbdR}
+Installing pbdR should go smoothly.  The simplest way to install the packages is from an \proglang{R} terminal, which will manage dependencies for you much like your distro's package manager.  Additionally, our packages are available in the Fedora repositories.
 
-Installing pbdR should be fairly straight forward.
+
+\subsubsection{Installing from CRAN}
+This is perhaps the simplest way to proceed, as \proglang{R} will handle any package dependency resolution for you.  Simply start an \proglang{R} session (from the terminal, type \code{R} then press enter) and issue the command:
+\begin{lstlisting}[language=rr]
+install.packages(<package>)
+\end{lstlisting}
+So for example, to install \pkg{pbdMPI}, you might execute:
+\begin{lstlisting}[language=rr]
+install.packages(pbdMPI)
+\end{lstlisting}
 
 
+\subsubsection{Installing from the Shell}
+If you have downloaded a pbdR (or other \proglang{R}) package, then installing from the shell simply amounts to issuing the command:
+\begin{lstlisting}[language=sh]
+R CMD INSTALL <package>
+\end{lstlisting}
+So for example, to install \pkg{pbdMPI}, you might execute:
+\begin{lstlisting}[language=sh]
+R CMD INSTALL pbdMPI_0.1-6.tar.gz
+\end{lstlisting}
+
+
+\subsubsection{Installing from Github}
+CRAN policy is such that updates to packages can not be made too frequently.  For this reason, the development versions of our packages will have bugfixes and new features much more quickly than CRAN versions.  
+
+The easiest way to install from github is using Hadley Wichkam's \pkg{devtools} package (which can be installed via \code{install.packages(devtools)}).  Assuming you have this package installed, then from an \proglang{R} session, then to install a pbdR package, you would issue one of the following:
+
+\begin{lstlisting}[language=rr]
+install_github(repo="pbdMPI", username="snoweye")
+install_github(repo="pbdSLAP", username="snoweye")
+install_github(repo="pbdNCDF4", username="snoweye")
+
+install_github(repo="pbdBASE", username="wrathematics")
+install_github(repo="pbdDMAT", username="wrathematics")
+install_github(repo="pbdDEMO", username="wrathematics")
+\end{lstlisting}

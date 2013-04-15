@@ -3,8 +3,79 @@
 Before starting, make sure you have installed XCode.  You can find this in the Mac App Store.
 
 
+terminal
+
+
+
+\subsection{Installing R}
+
+\subsubsection{Installing from a Binary Package}
+
+
+
+
+\subsubsection{Compiling from Source}
+
+You can find \proglang{R} sources from \url{http://cran.r-project.org/sources.html}
+
+Generally, it should be enough to simply execute
+\begin{lstlisting}[language=sh]
+./configure && make && make install
+\end{lstlisting}
+without problems.
+
+
+
+
+
+
+
+
+
 \subsection{Installing MPI}
+
+\subsubsection{Installing from a Package Repository}
+
+
+
+
+
+\subsubsection{Compiling from Source}
+If you want to install OpenMPI from source (I don't really recommend this unless this document is irrelevant to you in the first place), then the sources are available here:  \url{http://www.open-mpi.org/software/ompi/v1.6/} .
+
+
+
+
+
+
+
 
 
 \subsection{Installing pbdR}
+Installing pbdR should go smoothly.  The simplest way to install the packages is from an \proglang{R} terminal, which will manage dependencies for you much like your distro's package manager.  Additionally, our packages are available in the Fedora repositories.
 
+
+\subsubsection{Installing from CRAN}
+This is perhaps the simplest way to proceed, as \proglang{R} will handle any package dependency resolution for you.  Simply start an \proglang{R} session (from the terminal\footnote{Do \emph{not} use the gui.  See section~\ref{sec:porblam} for details}, type \code{R} then press enter) and issue the command:
+\begin{lstlisting}[language=rr]
+install.packages(<package>)
+\end{lstlisting}
+So for example, to install \pkg{pbdMPI}, you might execute:
+\begin{lstlisting}[language=rr]
+install.packages(pbdMPI)
+\end{lstlisting}
+
+
+\subsubsection{Installing from the Shell}
+If you have downloaded a pbdR (or other \proglang{R}) package, then installing from the shell simply amounts to issuing the command:
+\begin{lstlisting}[language=sh]
+R CMD INSTALL <package>
+\end{lstlisting}
+So for example, to install \pkg{pbdMPI}, you might execute:
+\begin{lstlisting}[language=sh]
+R CMD INSTALL pbdMPI_0.1-6.tar.gz
+\end{lstlisting}
+
+
+\subsubsection{Installing from Github}
+CRAN policy is such that updates to packages can not be made too frequently.  For this reason, the development versions of our packages will have bugfixes and new features much more quickly than CRAN versions.  
