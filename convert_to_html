@@ -8,7 +8,7 @@ htlatex index.tex && echo -e "\n\n\n"
 
 
 for file in *.html; do
-    sed -i 's/src=\"/src=\"..\/..\//g' $file
+    sed -i 's/src=\"/src=\"..\/..\/..\//g' $file
 
 	sed -i 's/<\/h3>/<hr><\/h3>/g' $file
 	sed -i 's/\&#x00A0;<span class=\"subsectionToc/\&#x00A0;\&#x00A0;\&#x00A0;\&#x00A0;\&#x00A0;\&#x00A0;<span class=\"subsectionToc/' $file
