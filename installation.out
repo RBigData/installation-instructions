@@ -7,7 +7,29 @@
 \BOOKMARK [2][-]{subsection.2.2}{Rtools}{section.2}% 7
 \BOOKMARK [2][-]{subsection.2.3}{MPICH2}{section.2}% 8
 \BOOKMARK [2][-]{subsection.2.4}{pbdR}{section.2}% 9
-\BOOKMARK [1][-]{section.3}{Installation Problems}{}% 10
-\BOOKMARK [2][-]{subsection.3.1}{R and MPI}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.2}{pbdR}{section.3}% 12
-\BOOKMARK [1][-]{section.4}{Running pbdR Scripts}{}% 13
+\BOOKMARK [1][-]{section.3}{Mac OS X}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Installing R}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Installing from a Binary Package}{subsection.3.1}% 12
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Compiling from Source}{subsection.3.1}% 13
+\BOOKMARK [2][-]{subsection.3.2}{Installing MPI}{section.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Installing from a Package Repository}{subsection.3.2}% 15
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Compiling from Source}{subsection.3.2}% 16
+\BOOKMARK [2][-]{subsection.3.3}{Installing pbdR}{section.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Installing from CRAN}{subsection.3.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Installing from the Shell}{subsection.3.3}% 19
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Installing from Github}{subsection.3.3}% 20
+\BOOKMARK [1][-]{section.4}{Linux and FreeBSD}{}% 21
+\BOOKMARK [2][-]{subsection.4.1}{Installing R}{section.4}% 22
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Installing from a Package Repository}{subsection.4.1}% 23
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Compiling from Source}{subsection.4.1}% 24
+\BOOKMARK [2][-]{subsection.4.2}{Installing MPI}{section.4}% 25
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Installing from a Package Repository}{subsection.4.2}% 26
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Compiling from Source}{subsection.4.2}% 27
+\BOOKMARK [2][-]{subsection.4.3}{Installing pbdR}{section.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Installing from CRAN}{subsection.4.3}% 29
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Installing from the Shell}{subsection.4.3}% 30
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Installing from Github}{subsection.4.3}% 31
+\BOOKMARK [1][-]{section.5}{Installation Problems}{}% 32
+\BOOKMARK [2][-]{subsection.5.1}{R and MPI}{section.5}% 33
+\BOOKMARK [2][-]{subsection.5.2}{pbdR}{section.5}% 34
+\BOOKMARK [1][-]{section.6}{Running pbdR Scripts}{}% 35

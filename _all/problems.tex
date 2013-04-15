@@ -10,7 +10,7 @@ If you are having trouble installing an MPI library, you should see that library
 
 For the remainder, we will be addressing installation issues with pbdR packages.
 
-\subsection{pbdR}
+\subsection{pbdR}\label{sec:porblam}
 
 This is a quick list of potential problems you could encounter when installing pbdR packages.  For additional troubleshooting or installation options, each package has a vignette which may offer additional useful information.
 
@@ -24,8 +24,10 @@ R CMD INSTALL pbdMPI_0.1-6.tar.gz \
   \begin{lstlisting}[language=rr]
 install.packages("pbdMPI", configure.args='--with-Rmpi-type=OPENMPI')
 \end{lstlisting}
+  See the \pkg{pbdMPI} vignette for more details.
 
-  \item \textbf{If you are installing on a cluster} where you must install on the login node which can not load the packages, then pass the install option \code{--no-test-load}.    So for example, if installing from the command line, then you would issue the command:
+  
+  \item \textbf{If you are installing on a cluster} where you must install on the login node which can not execute \code{mpirun}, then pass the install option \code{--no-test-load}.    So for example, if installing from the command line, then you would issue the command:
 \begin{Code}
 R CMD INSTALL pbdMPI_0.1-6.tar.gz --no-test-load
 \end{Code}
@@ -33,5 +35,8 @@ R CMD INSTALL pbdMPI_0.1-6.tar.gz --no-test-load
   \begin{lstlisting}[language=rr]
 install.packages("pbdMPI", INSTALL_opts='--no-test-load')
 \end{lstlisting}
+
   
+  \item \textbf{If you are installing binaries on MAC OS X}, do not use the gui.  You can install from source using the gui, or you can install binaries (or from source) using the terminal.  But you can not install binaries using the gui.  So if you want to install binaries,  you should open Finder, then navigate to \code{Applications/Utilities/} and select \code{Terminal}.  Next, type \code{R} and press enter.  Now try to install the packages.
+
 \end{itemize}
