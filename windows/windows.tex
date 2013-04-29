@@ -49,7 +49,7 @@ install.packages("rlecuyer")
 
 
 
-\subsection{Installing Rtools}
+\subsection{Installing Rtools}\label{inst:rtools}
 
 \begin{enumerate}
   \item Download Rtools: \url{http://cran.r-project.org/bin/windows/base/} \label{enum:rtoolsdl}
@@ -123,6 +123,52 @@ Before proceeding, please be aware that this installation requires {\color{red}{
 
 
 \subsection{Installing pbdR Packages}
+
+Unfortunately, we do not distribute pbdR binary packages on the CRAN for Windows.  This means that you must install our packages from source on Windows, and the process may be foreign.  We will present two approaches; the short way, installing from github using the \pkg{devtools} package, and a longer way, installing from a downloaded source file.  However, do be aware that each of these methods requires the installation of the Rtools package from Section~\ref{inst:rtools} (so that step cannot be skipped).
+
+
+\subsubsection{Installing from Github}
+
+This is probably the simplest method, assuming that you have Rtools installed and set up correctly.  If Rtools is not in your PATH, then you may need to enter something like the following:
+\begin{lstlisting}[language=rr]
+rtools <- "C:\\Rtools\\bin\\"
+mingw <- "C:\\Rtools\\gcc-4.6.3\\bin\\"
+
+PATH <- Sys.getenv("PATH")
+new.PATH <- paste(rtools, mingw, PATH, sep = ";")
+Sys.setenv(PATH=new.PATH)
+\end{lstlisting}
+Where the \code{rtools} and \code{mingw} directories are as they are on your machine.
+
+Once that is settled, installing is fairly simple.  You simply load the \pkg{devtools} package and install from our github repo as follows:
+\begin{lstlisting}[language=rr]
+library(devtools)
+
+install_github(repo="pbdMPI", username="RBigData")
+install_github(repo="pbdSLAP", username="RBigData")
+install_github(repo="pbdNCDF4", username="RBigData")
+install_github(repo="pbdBASE", username="RBigData")
+install_github(repo="pbdDMAT", username="RBigData")
+install_github(repo="pbdDEMO", username="RBigData")
+\end{lstlisting}
+
+You can also install \emph{really} new package builds, which will be very current in terms of features, but also bugs (or even complete package breakage).  If you're sure you want these packages, then you can install them as follows:
+
+\begin{lstlisting}[language=rr]
+# dev repo 1
+install_github(repo="pbdMPI", username="snoweye")
+install_github(repo="pbdSLAP", username="snoweye")
+install_github(repo="pbdNCDF4", username="snoweye")
+# dev repo 2
+install_github(repo="pbdBASE", username="wrathematics")
+install_github(repo="pbdDMAT", username="wrathematics")
+install_github(repo="pbdDEMO", username="wrathematics")
+\end{lstlisting}
+
+
+
+\subsubsection{Installing from Downloaded Source}
+
 \begin{enumerate}
   \item To help simplify things, we offer a simple \href{https://github.com/wrathematics/installation-instructions/raw/master/windows/build_pbdMPI.bat}{install script} which makes managing the \code{PATH} slightly simpler.  By default, this is for \proglang{R} version 2.15.3 and \pkg{pbdMPI} version 0.1-6.  If you have a different version of R or want to install a different version of \pkg{pbdMPI}, simply change lines 4 and/or 5 of the install script to match your needs.
   \sshot{windows/pics/build_0.png}

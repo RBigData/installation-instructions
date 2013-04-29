@@ -22,5 +22,4 @@ rem SET MPI_ROOT_32=C:\Program Files (x86)\MPICH2
 
 rem ### Build Windows binary.
 R CMD INSTALL --build --html pbdMPI_%PBDMPI_VER%.tar.gz
-R CMD INSTALL pbdMPI_0.1-6.zip
-
+R CMD INSTALL pbdMPI_%PBDMPI_VER%.zip

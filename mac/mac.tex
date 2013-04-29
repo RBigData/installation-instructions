@@ -142,6 +142,8 @@ CRAN policy is such that updates to packages can not be made too frequently.  Fo
 The easiest way to install from github is using Hadley Wichkam's \pkg{devtools} package (which can be installed via \code{install.packages(devtools)}).  Assuming you have this package installed, then from an \proglang{R} session, to install a pbdR package you would issue one of the following:
 
 \begin{lstlisting}[language=rr]
+library(devtools)
+
 install_github(repo="pbdMPI", username="RBigData")
 install_github(repo="pbdSLAP", username="RBigData")
 install_github(repo="pbdNCDF4", username="RBigData")

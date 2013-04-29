@@ -87,5 +87,5 @@ elif [ "$1" = "linux" ]; then
   gen "linux"
   
 else
-  echo "Error : you must specify compilation for win, mac, or linux"
+  echo "Error : you must specify compilation for all, win, mac, or linux"
 fi
