@@ -31,8 +31,9 @@ function checkexist
 {
   if [ -e $1 ];then
     rm $1
-    touch $1
   fi
+
+  touch $1
 }
 
 
