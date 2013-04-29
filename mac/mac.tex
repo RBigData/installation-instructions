@@ -85,7 +85,18 @@ without problems.
 
 \subsection{Installing MPI}
 
-\subsubsection{Installing from a Package Repository}
+You have several options for installing OpenMPI on a Mac.  You can install from \href{https://www.macports.org/}{MacPorts}, which is a relatively simple way to manage compiling/installing of many packages (such as OpenMPI).  You can also compile from source.
+
+Before beginning, make sure you have some ``downtime'' allotted, as the compilation will take upwards of a few hours for some machines.
+
+\subsubsection{Installing from a MacPorts}
+
+Arguably the easiest way to install OpenMPI for a Mac (that I'm aware of) is using \href{https://www.macports.org/}{MacPorts}, which is not unlike some source repositories for Linux.  You can find information about installing MacPorts from \href{https://www.macports.org/install.php}{MacPorts installation page}, maintained by the MacPorts project.
+
+Once you have MacPorts installed, you can install openmpi from a terminal by issuing the command:
+\begin{lstlisting}[language=sh]
+sudo port install openmpi
+\end{lstlisting}
 
 
 
@@ -94,9 +105,6 @@ without problems.
 \subsubsection{Compiling from Source}
 
 If you want to install OpenMPI from source (I don't really recommend this unless you think you have a good reason to), then the sources are available \href{http://www.open-mpi.org/software/ompi/v1.6/}{here}.
-
-
-
 
 
 
