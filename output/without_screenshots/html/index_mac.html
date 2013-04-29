@@ -9,7 +9,7 @@ Version 1.0</title>
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html --> 
 <meta name="src" content="index.tex"> 
-<meta name="date" content="2013-04-29 09:11:00"> 
+<meta name="date" content="2013-04-29 09:37:00"> 
 <link rel="stylesheet" type="text/css" href="index.css"> 
 </head><body 
 >
@@ -94,7 +94,7 @@ href="#x1-100003.1.2" id="QQ2-1-11">Compiling from Source</a></span>
 <br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >3.2 <a 
 href="#x1-110003.2" id="QQ2-1-12">Installing MPI</a></span>
 <br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >3.2.1 <a 
-href="#x1-120003.2.1" id="QQ2-1-13">Installing from a Package Repository</a></span>
+href="#x1-120003.2.1" id="QQ2-1-13">Installing from a MacPorts</a></span>
 <br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >3.2.2 <a 
 href="#x1-130003.2.2" id="QQ2-1-14">Compiling from Source</a></span>
 <br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >3.3 <a 
@@ -360,35 +360,58 @@ class="rm-lmtt-10x-x-109">install</span>
 <!--l. 86--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
  id="x1-110003.2"></a>Installing MPI</h4>
-<!--l. 88--><p class="noindent" >
+<!--l. 88--><p class="noindent" >You have several options for installing OpenMPI on a Mac. You can install from <a 
+href="https://www.macports.org/" >MacPorts</a>, which is a
+relatively simple way to manage compiling/installing of many packages (such as OpenMPI). You can also
+compile from source.
+<!--l. 90--><p class="noindent" >Before beginning, make sure you have some &#8220;downtime&#8221; allotted, as the compilation will take upwards of a few
                                                                                              
                                                                                              
+hours for some machines.
+<!--l. 92--><p class="noindent" >
 <h5 class="subsubsectionHead"><span class="titlemark">3.2.1   </span> <a 
- id="x1-120003.2.1"></a>Installing from a Package Repository</h5>
-<!--l. 94--><p class="noindent" >
+ id="x1-120003.2.1"></a>Installing from a MacPorts</h5>
+<!--l. 94--><p class="noindent" >Arguably the easiest way to install OpenMPI for a Mac (that I&#8217;m aware of) is using <a 
+href="https://www.macports.org/" >MacPorts</a>, which is not
+unlike some source repositories for Linux. You can find information about installing MacPorts from <a 
+href="https://www.macports.org/install.php" >MacPorts
+installation page</a>, maintained by the MacPorts project.
+<!--l. 96--><p class="noindent" >Once you have MacPorts installed, you can install openmpi from a terminal by issuing the command:
+<!--l. 97-->
+<div class="lstlisting" id="listing-4"><span class="label"><a 
+ id="x1-12001r1"></a></span><span 
+class="rm-lmtt-10x-x-109">sudo</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">port</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">install</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">openmpi</span>
+</div>
+<!--l. 105--><p class="noindent" >
 <h5 class="subsubsectionHead"><span class="titlemark">3.2.2   </span> <a 
  id="x1-130003.2.2"></a>Compiling from Source</h5>
-<!--l. 96--><p class="noindent" >If you want to install OpenMPI from source (I don&#8217;t really recommend this unless you think you have a good
+<!--l. 107--><p class="noindent" >If you want to install OpenMPI from source (I don&#8217;t really recommend this unless you think you have a good
 reason to), then the sources are available <a 
 href="http://www.open-mpi.org/software/ompi/v1.6/" >here</a>.
-<!--l. 105--><p class="noindent" >
+<!--l. 113--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">3.3   </span> <a 
  id="x1-140003.3"></a>Installing pbdR Packages</h4>
-<!--l. 106--><p class="noindent" >Installing pbdR should go smoothly. The simplest way to install the packages is from an <span 
+<!--l. 114--><p class="noindent" >Installing pbdR should go smoothly. The simplest way to install the packages is from an <span 
 class="rm-lmss-10x-x-109">R </span>terminal, which will
 manage dependencies for you much like the Mac App store.
-<!--l. 109--><p class="noindent" >
+<!--l. 117--><p class="noindent" >
 <h5 class="subsubsectionHead"><span class="titlemark">3.3.1   </span> <a 
  id="x1-150003.3.1"></a>Installing from CRAN</h5>
-<!--l. 110--><p class="noindent" >This is perhaps the simplest way to proceed, as <span 
+<!--l. 118--><p class="noindent" >This is perhaps the simplest way to proceed, as <span 
 class="rm-lmss-10x-x-109">R </span>will handle any package dependency resolution for you. Simply start an <span 
 class="rm-lmss-10x-x-109">R </span>session
 (from the terminal<span class="footnote-mark"><a 
 href="index2.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
  id="x1-15001f1"></a> ,
 type <span 
-class="rm-lmtt-10x-x-109">R </span>then press enter) and issue the command: <!--l. 111-->
-<div class="lstlisting" id="listing-4"><span class="label"><a 
+class="rm-lmtt-10x-x-109">R </span>then press enter) and issue the command: <!--l. 119-->
+<div class="lstlisting" id="listing-5"><span class="label"><a 
  id="x1-15002r1"></a></span><span 
 class="rm-lmtt-10x-x-109">install</span><span 
 class="rm-lmtt-10x-x-109">.</span><span 
@@ -397,9 +420,11 @@ class="rm-lmtt-10x-x-109">(¡</span><span
 class="rm-lmtt-10x-x-109">package</span><span 
 class="rm-lmtt-10x-x-109">¿)</span>
 </div>
-<!--l. 114--><p class="noindent" >So for example, to install <span 
-class="rm-lmb-10x-x-109">pbdMPI</span>, you might execute: <!--l. 115-->
-<div class="lstlisting" id="listing-5"><span class="label"><a 
+                                                                                             
+                                                                                             
+<!--l. 122--><p class="noindent" >So for example, to install <span 
+class="rm-lmb-10x-x-109">pbdMPI</span>, you might execute: <!--l. 123-->
+<div class="lstlisting" id="listing-6"><span class="label"><a 
  id="x1-15003r1"></a></span><span 
 class="rm-lmtt-10x-x-109">install</span><span 
 class="rm-lmtt-10x-x-109">.</span><span 
@@ -410,10 +435,10 @@ class="rm-lmtt-10x-x-109">)</span>
 </div>
 <h5 class="subsubsectionHead"><span class="titlemark">3.3.2   </span> <a 
  id="x1-160003.3.2"></a>Installing from the Shell</h5>
-<!--l. 121--><p class="noindent" >If you have downloaded a pbdR (or other <span 
+<!--l. 129--><p class="noindent" >If you have downloaded a pbdR (or other <span 
 class="rm-lmss-10x-x-109">R</span>) package, then installing from the shell simply amounts to issuing
-the command: <!--l. 122-->
-<div class="lstlisting" id="listing-6"><span class="label"><a 
+the command: <!--l. 130-->
+<div class="lstlisting" id="listing-7"><span class="label"><a 
  id="x1-16001r1"></a></span><span 
 class="rm-lmtt-10x-x-109">R</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
@@ -425,11 +450,9 @@ class="rm-lmtt-10x-x-109">¡</span><span
 class="rm-lmtt-10x-x-109">package</span><span 
 class="rm-lmtt-10x-x-109">¿</span>
 </div>
-                                                                                             
-                                                                                             
-<!--l. 125--><p class="noindent" >So for example, to install <span 
-class="rm-lmb-10x-x-109">pbdMPI</span>, you might execute: <!--l. 126-->
-<div class="lstlisting" id="listing-7"><span class="label"><a 
+<!--l. 133--><p class="noindent" >So for example, to install <span 
+class="rm-lmb-10x-x-109">pbdMPI</span>, you might execute: <!--l. 134-->
+<div class="lstlisting" id="listing-8"><span class="label"><a 
  id="x1-16002r1"></a></span><span 
 class="rm-lmtt-10x-x-109">R</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
@@ -443,20 +466,20 @@ class="rm-lmtt-10x-x-109">tar</span><span
 class="rm-lmtt-10x-x-109">.</span><span 
 class="rm-lmtt-10x-x-109">gz</span>
 </div>
-<!--l. 131--><p class="noindent" >
+<!--l. 139--><p class="noindent" >
 <h5 class="subsubsectionHead"><span class="titlemark">3.3.3   </span> <a 
  id="x1-170003.3.3"></a>Installing from Github</h5>
-<!--l. 132--><p class="noindent" >CRAN policy is such that updates to packages can not be made too frequently. For this reason, the
+<!--l. 140--><p class="noindent" >CRAN policy is such that updates to packages can not be made too frequently. For this reason, the
 development versions of our packages will have bugfixes and new features much more quickly than CRAN
 versions.
-<!--l. 134--><p class="noindent" >The easiest way to install from github is using Hadley Wichkam&#8217;s <span 
+<!--l. 142--><p class="noindent" >The easiest way to install from github is using Hadley Wichkam&#8217;s <span 
 class="rm-lmb-10x-x-109">devtools </span>package (which can be installed via
 <span 
 class="rm-lmtt-10x-x-109">install.packages(devtools)</span>). Assuming you have this package installed, then from an <span 
 class="rm-lmss-10x-x-109">R </span>session, to install a
 pbdR package you would issue one of the following:
-<!--l. 136-->
-<div class="lstlisting" id="listing-8"><span class="label"><a 
+<!--l. 144-->
+<div class="lstlisting" id="listing-9"><span class="label"><a 
  id="x1-17001r1"></a></span><span 
 class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
 class="rm-lmtt-10x-x-109">(</span><span 
@@ -535,12 +558,12 @@ class="rm-lmtt-10x-x-109">=&#8221;</span><span
 class="rm-lmtt-10x-x-109">RBigData</span><span 
 class="rm-lmtt-10x-x-109">&#8221;)</span>
 </div>
-<!--l. 145--><p class="noindent" >You can also install <span 
+<!--l. 153--><p class="noindent" >You can also install <span 
 class="rm-lmri-10x-x-109">really </span>new package builds, which will be very current in terms of features, but also bugs
 (or even complete package breakage). If you&#8217;re sure you want these packages, then you can install them as
 follows:
-<!--l. 147-->
-<div class="lstlisting" id="listing-9"><span class="label"><a 
+<!--l. 155-->
+<div class="lstlisting" id="listing-10"><span class="label"><a 
  id="x1-17007r1"></a></span><span 
 class="rm-lmtt-10x-x-109">#</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
@@ -637,6 +660,8 @@ class="rm-lmtt-10x-x-109">=&#8221;</span><span
 class="rm-lmtt-10x-x-109">wrathematics</span><span 
 class="rm-lmtt-10x-x-109">&#8221;)</span>
 </div>
+                                                                                             
+                                                                                             
 <!--l. 1--><p class="noindent" >
 <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
  id="x1-180004"></a>Running pbdR Scripts<hr></h3>
@@ -653,9 +678,7 @@ Namely,
 <!--l. 11--><p class="noindent" >Below is a simple pbdR script. This will help you know if things are installed properly or not. To understand
 what the script is doing, or to learn how to do much more substantial things, you should see the pbdDEMO
 package vignette. <!--l. 12-->
-                                                                                             
-                                                                                             
-<div class="lstlisting" id="listing-10"><span class="label"><a 
+<div class="lstlisting" id="listing-11"><span class="label"><a 
  id="x1-18001r1"></a></span><span 
 class="rm-lmtt-10x-x-109">library</span><span 
 class="rm-lmtt-10x-x-109">(</span><span 
@@ -741,6 +764,8 @@ class="rm-lmtt-10x-x-109">http://www.open-mpi.org/community/help/</span></a> and
 href="http://www.mpich.org/documentation/guides/" class="url" ><span 
 class="rm-lmtt-10x-x-109">http://www.mpich.org/documentation/guides/</span></a> .
 <!--l. 11--><p class="noindent" >For the remainder, we will be addressing installation issues with pbdR packages.
+                                                                                             
+                                                                                             
 <!--l. 13--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">5.2   </span> <a 
  id="x1-210005.2"></a>pbdR</h4>
@@ -767,9 +792,7 @@ class="lmsy-10x-x-109">-</span>type=OPENMPI&#8217;
      &#x00A0;<br /><span class="label"><a 
  id="x1-21003r3"></a></span></pre>
      <!--l. 23--><p class="noindent" >or if installing from R: <!--l. 24-->
-                                                                                             
-                                                                                             
-     <div class="lstlisting" id="listing-11"><span class="label"><a 
+     <div class="lstlisting" id="listing-12"><span class="label"><a 
  id="x1-21004r1"></a></span><span 
 class="rm-lmtt-10x-x-109">install</span><span 
 class="rm-lmtt-10x-x-109">.</span><span 
@@ -811,7 +834,7 @@ class="lmsy-10x-x-109">-</span>load
      &#x00A0;<br /><span class="label"><a 
  id="x1-21006r2"></a></span></pre>
      <!--l. 34--><p class="noindent" >or if installing from R: <!--l. 35-->
-     <div class="lstlisting" id="listing-12"><span class="label"><a 
+     <div class="lstlisting" id="listing-13"><span class="label"><a 
  id="x1-21007r1"></a></span><span 
 class="rm-lmtt-10x-x-109">install</span><span 
 class="rm-lmtt-10x-x-109">.</span><span 
