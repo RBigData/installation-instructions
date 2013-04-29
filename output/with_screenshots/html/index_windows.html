@@ -9,7 +9,7 @@ Version 1.0</title>
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html --> 
 <meta name="src" content="index.tex"> 
-<meta name="date" content="2013-04-29 09:37:00"> 
+<meta name="date" content="2013-04-29 13:58:00"> 
 <link rel="stylesheet" type="text/css" href="index.css"> 
 </head><body 
 >
@@ -99,14 +99,18 @@ href="#x1-90003.2" id="QQ2-1-10">Installing Rtools</a></span>
 href="#x1-100003.3" id="QQ2-1-11">Installing MPI</a></span>
 <br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >3.4 <a 
 href="#x1-110003.4" id="QQ2-1-12">Installing pbdR Packages</a></span>
+<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >3.4.1 <a 
+href="#x1-120003.4.1" id="QQ2-1-13">Installing from Github</a></span>
+<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >3.4.2 <a 
+href="#x1-130003.4.2" id="QQ2-1-14">Installing from Downloaded Source</a></span>
 <br /><span class="sectionToc" >4 <a 
-href="#x1-120004" id="QQ2-1-13">Running pbdR Scripts</a></span>
+href="#x1-140004" id="QQ2-1-15">Running pbdR Scripts</a></span>
 <br /><span class="sectionToc" >5 <a 
-href="#x1-130005" id="QQ2-1-14">Installation Problems</a></span>
+href="#x1-150005" id="QQ2-1-16">Installation Problems</a></span>
 <br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >5.1 <a 
-href="#x1-140005.1" id="QQ2-1-15">R and MPI</a></span>
+href="#x1-160005.1" id="QQ2-1-17">R and MPI</a></span>
 <br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span class="subsectionToc" >5.2 <a 
-href="#x1-150005.2" id="QQ2-1-16">pbdR</a></span>
+href="#x1-170005.2" id="QQ2-1-18">pbdR</a></span>
 </div>
 <!--l. 139--><p class="noindent" >
                                                                                              
@@ -563,10 +567,302 @@ src="../../../windows/pics/mpich2_8.png" alt="PIC"
 <!--l. 125--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">3.4   </span> <a 
  id="x1-110003.4"></a>Installing pbdR Packages</h4>
-<!--l. 126--><p class="noindent" >
+<!--l. 127--><p class="noindent" >Unfortunately, we do not distribute pbdR binary packages on the CRAN for Windows. This means that you
+must install our packages from source on Windows, and the process may be foreign. We will
+present two approaches; the short way, installing from github using the <span 
+class="rm-lmb-10x-x-109">devtools </span>package, and a
+longer way, installing from a downloaded source file. However, do be aware that each of these
+methods requires the installation of the Rtools package from Section&#x00A0;<a 
+href="#x1-90003.2">3.2<!--tex4ht:ref: inst:rtools --></a> (so that step cannot be
+skipped).
+<!--l. 130--><p class="noindent" >
+<h5 class="subsubsectionHead"><span class="titlemark">3.4.1   </span> <a 
+ id="x1-120003.4.1"></a>Installing from Github</h5>
+<!--l. 132--><p class="noindent" >This is probably the simplest method, assuming that you have Rtools installed and set up correctly. If Rtools
+is not in your PATH, then you may need to enter something like the following: <!--l. 133-->
+<div class="lstlisting" id="listing-2"><span class="label"><a 
+ id="x1-12001r1"></a></span><span 
+class="rm-lmtt-10x-x-109">rtools</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">¡-</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">&#8221;</span><span 
+class="rm-lmtt-10x-x-109">C</span><span 
+class="rm-lmtt-10x-x-109">:&#8220;&#8220;</span><span 
+class="rm-lmtt-10x-x-109">Rtools</span><span 
+class="rm-lmtt-10x-x-109">&#8220;&#8220;</span><span 
+class="rm-lmtt-10x-x-109">bin</span><span 
+class="rm-lmtt-10x-x-109">&#8220;&#8220;&#8221;</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12002r2"></a></span><span 
+class="rm-lmtt-10x-x-109">mingw</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">¡-</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">&#8221;</span><span 
+class="rm-lmtt-10x-x-109">C</span><span 
+class="rm-lmtt-10x-x-109">:&#8220;&#8220;</span><span 
+class="rm-lmtt-10x-x-109">Rtools</span><span 
+class="rm-lmtt-10x-x-109">&#8220;&#8220;</span><span 
+class="rm-lmtt-10x-x-109">gcc</span><span 
+class="rm-lmtt-10x-x-109">-4.6.3&#8220;&#8220;</span><span 
+class="rm-lmtt-10x-x-109">bin</span><span 
+class="rm-lmtt-10x-x-109">&#8220;&#8220;&#8221;</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12003r3"></a></span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12004r4"></a></span><span 
+class="rm-lmtt-10x-x-109">PATH</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">¡-</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">Sys</span><span 
+class="rm-lmtt-10x-x-109">.</span><span 
+class="rm-lmtt-10x-x-109">getenv</span><span 
+class="rm-lmtt-10x-x-109">(&#8221;</span><span 
+class="rm-lmtt-10x-x-109">PATH</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12005r5"></a></span><span 
+class="rm-lmtt-10x-x-109">new</span><span 
+class="rm-lmtt-10x-x-109">.</span><span 
+class="rm-lmtt-10x-x-109">PATH</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">¡-</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">paste</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">rtools</span><span 
+class="rm-lmtt-10x-x-109">,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">mingw</span><span 
+class="rm-lmtt-10x-x-109">,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">PATH</span><span 
+class="rm-lmtt-10x-x-109">,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">sep</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">=</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">&#8221;;&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12006r6"></a></span><span 
+class="rm-lmtt-10x-x-109">Sys</span><span 
+class="rm-lmtt-10x-x-109">.</span><span 
+class="rm-lmtt-10x-x-109">setenv</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">PATH</span><span 
+class="rm-lmtt-10x-x-109">=</span><span 
+class="rm-lmtt-10x-x-109">new</span><span 
+class="rm-lmtt-10x-x-109">.</span><span 
+class="rm-lmtt-10x-x-109">PATH</span><span 
+class="rm-lmtt-10x-x-109">)</span>
+</div>
+<!--l. 141--><p class="noindent" >Where the <span 
+class="rm-lmtt-10x-x-109">rtools </span>and <span 
+class="rm-lmtt-10x-x-109">mingw </span>directories are as they are on your machine.
+<!--l. 143--><p class="noindent" >Once that is settled, installing is fairly simple. You simply load the <span 
+class="rm-lmb-10x-x-109">devtools </span>package and install from our
+github repo as follows: <!--l. 144-->
+<div class="lstlisting" id="listing-3"><span class="label"><a 
+ id="x1-12007r1"></a></span><span 
+class="rm-lmtt-10x-x-109">library</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">devtools</span><span 
+class="rm-lmtt-10x-x-109">)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12008r2"></a></span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12009r3"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdMPI</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">RBigData</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12010r4"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdSLAP</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">RBigData</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12011r5"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdNCDF4</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">RBigData</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12012r6"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdBASE</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">RBigData</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12013r7"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdDMAT</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">RBigData</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12014r8"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdDEMO</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">RBigData</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span>
+                                                                                             
+                                                                                             
+</div>
+<!--l. 155--><p class="noindent" >You can also install <span 
+class="rm-lmri-10x-x-109">really </span>new package builds, which will be very current in terms of features, but also bugs
+(or even complete package breakage). If you&#8217;re sure you want these packages, then you can install them as
+follows:
+<!--l. 157-->
+<div class="lstlisting" id="listing-4"><span class="label"><a 
+ id="x1-12015r1"></a></span><span 
+class="rm-lmtt-10x-x-109">#</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">dev</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">1</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12016r2"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdMPI</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">snoweye</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12017r3"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdSLAP</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">snoweye</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12018r4"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdNCDF4</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">snoweye</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12019r5"></a></span><span 
+class="rm-lmtt-10x-x-109">#</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">dev</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">2</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12020r6"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdBASE</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">wrathematics</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12021r7"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdDMAT</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">wrathematics</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-12022r8"></a></span><span 
+class="rm-lmtt-10x-x-109">install&#x02D9;github</span><span 
+class="rm-lmtt-10x-x-109">(</span><span 
+class="rm-lmtt-10x-x-109">repo</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">pbdDEMO</span><span 
+class="rm-lmtt-10x-x-109">&#8221;,</span><span 
+class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
+class="rm-lmtt-10x-x-109">username</span><span 
+class="rm-lmtt-10x-x-109">=&#8221;</span><span 
+class="rm-lmtt-10x-x-109">wrathematics</span><span 
+class="rm-lmtt-10x-x-109">&#8221;)</span>
+</div>
+<!--l. 170--><p class="noindent" >
+<h5 class="subsubsectionHead"><span class="titlemark">3.4.2   </span> <a 
+ id="x1-130003.4.2"></a>Installing from Downloaded Source</h5>
+<!--l. 172--><p class="noindent" >
      <ol  class="enumerate1" >
      <li 
-  class="enumerate" id="x1-11002x1">To help simplify things, we offer a simple <a 
+  class="enumerate" id="x1-13002x1">To help simplify things, we offer a simple <a 
 href="https://github.com/wrathematics/installation-instructions/raw/master/windows/build_pbdMPI.bat" >install script</a> which makes managing the <span 
 class="rm-lmtt-10x-x-109">PATH </span>slightly simpler.
      By default, this is for <span 
@@ -577,33 +873,31 @@ class="rm-lmb-10x-x-109">pbdMPI</span>, simply change lines 4 and/or 5 of the in
      match your needs.
      <div class="center" 
 >
-<!--l. 128--><p class="noindent" >
-<!--l. 128--><p class="noindent" ><img 
+<!--l. 174--><p class="noindent" >
+<!--l. 174--><p class="noindent" ><img 
 src="../../../windows/pics/build_0.png" alt="PIC"  
 ></div>
      </li>
      <li 
-  class="enumerate" id="x1-11004x2">Open a command prompt either from the start menu, or by entering the command <span 
+  class="enumerate" id="x1-13004x2">Open a command prompt either from the start menu, or by entering the command <span 
 class="rm-lmtt-10x-x-109">Windows key </span>then <span 
 class="rm-lmtt-10x-x-109">R</span>,
      and then entering <span 
 class="rm-lmtt-10x-x-109">cmd </span>in the &#8220;run&#8221; dialog box.
      <div class="center" 
 >
-<!--l. 131--><p class="noindent" >
-<!--l. 131--><p class="noindent" ><img 
+<!--l. 177--><p class="noindent" >
+<!--l. 177--><p class="noindent" ><img 
 src="../../../windows/pics/build_1.png" alt="PIC"  
 ></div>
      </li>
      <li 
-  class="enumerate" id="x1-11006x3">Before proceeding further, it is probably a good idea to test the installation of MPICH2. The following
+  class="enumerate" id="x1-13006x3">Before proceeding further, it is probably a good idea to test the installation of MPICH2. The following
      commands utilize MPICH2 to do some fairly trivial things (do not copy <span 
 class="rm-lmtt-10x-x-109">SHELL¿ </span>if you are copying and
-                                                                                             
-                                                                                             
-     pasting from the lines below): <!--l. 134-->
-     <div class="lstlisting" id="listing-2"><span class="label"><a 
- id="x1-11007r1"></a></span><span 
+     pasting from the lines below): <!--l. 180-->
+     <div class="lstlisting" id="listing-5"><span class="label"><a 
+ id="x1-13007r1"></a></span><span 
 class="rm-lmtt-10x-x-109">SHELL</span><span 
 class="rm-lmtt-10x-x-109">¿</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
@@ -626,7 +920,7 @@ class="rm-lmtt-10x-x-109">hostname</span><span
 class="rm-lmtt-10x-x-109">.</span><span 
 class="rm-lmtt-10x-x-109">exe</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
- id="x1-11008r2"></a></span><span 
+ id="x1-13008r2"></a></span><span 
 class="rm-lmtt-10x-x-109">SHELL</span><span 
 class="rm-lmtt-10x-x-109">¿</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
@@ -656,7 +950,7 @@ class="rm-lmtt-10x-x-109">ls</span><span
 class="rm-lmtt-10x-x-109">()</span><span 
 class="rm-lmtt-10x-x-109">&#8221;</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
- id="x1-11009r3"></a></span><span 
+ id="x1-13009r3"></a></span><span 
 class="rm-lmtt-10x-x-109">SHELL</span><span 
 class="rm-lmtt-10x-x-109">¿</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
@@ -689,13 +983,15 @@ class="rm-lmtt-10x-x-109">&#8221;</span>
      </div>
      <div class="center" 
 >
-<!--l. 139--><p class="noindent" >
-<!--l. 139--><p class="noindent" ><img 
+<!--l. 185--><p class="noindent" >
+                                                                                             
+                                                                                             
+<!--l. 185--><p class="noindent" ><img 
 src="../../../windows/pics/build_2.png" alt="PIC"  
 ></div>
      </li>
      <li 
-  class="enumerate" id="x1-11011x4">Download the <a 
+  class="enumerate" id="x1-13011x4">Download the <a 
 href="http://cran.r-project.org/src/contrib/pbdMPI_0.1-6.tar.gz" >source</a> for <a 
 href="http://cran.r-project.org/web/packages/pbdMPI/index.html" ><span 
 class="rm-lmb-10x-x-109">pbdMPI</span></a> package. Put it in the same directory as your <span 
@@ -704,23 +1000,23 @@ class="rm-lmtt-10x-x-109">build&#x02D9;pbdMPI.bat </span>file,
 class="rm-lmtt-10x-x-109">build&#x02D9;pbdMPI.bat </span>from the command prompt to install the package.
      <div class="center" 
 >
-<!--l. 145--><p class="noindent" >
-<!--l. 145--><p class="noindent" ><img 
+<!--l. 191--><p class="noindent" >
+<!--l. 191--><p class="noindent" ><img 
 src="../../../windows/pics/build_4.png" alt="PIC"  
 ></div>
      </li>
      <li 
-  class="enumerate" id="x1-11013x5">If the process is done without errors, you can see the binary package is installed.
+  class="enumerate" id="x1-13013x5">If the process is done without errors, you can see the binary package is installed.
      <div class="center" 
 >
-<!--l. 148--><p class="noindent" >
-<!--l. 148--><p class="noindent" ><img 
+<!--l. 194--><p class="noindent" >
+<!--l. 194--><p class="noindent" ><img 
 src="../../../windows/pics/build_5.png" alt="PIC"  
 ></div>
      </li></ol>
 <!--l. 1--><p class="noindent" >
 <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
- id="x1-120004"></a>Running pbdR Scripts<hr></h3>
+ id="x1-140004"></a>Running pbdR Scripts<hr></h3>
 <!--l. 2--><p class="noindent" >This information is covered in <span 
 class="rm-lmri-10x-x-109">much </span>more detail in the <a 
 href="http://cran.r-project.org/web/packages/pbdDEMO/index.html" >pbdDEMO</a> vignette, and should not be considered a
@@ -734,8 +1030,8 @@ Namely,
 <!--l. 11--><p class="noindent" >Below is a simple pbdR script. This will help you know if things are installed properly or not. To understand
 what the script is doing, or to learn how to do much more substantial things, you should see the pbdDEMO
 package vignette. <!--l. 12-->
-<div class="lstlisting" id="listing-3"><span class="label"><a 
- id="x1-12001r1"></a></span><span 
+<div class="lstlisting" id="listing-6"><span class="label"><a 
+ id="x1-14001r1"></a></span><span 
 class="rm-lmtt-10x-x-109">library</span><span 
 class="rm-lmtt-10x-x-109">(</span><span 
 class="rm-lmtt-10x-x-109">pbdMPI</span><span 
@@ -748,13 +1044,13 @@ class="rm-lmtt-10x-x-109">&#x00A0;</span><span
 class="rm-lmtt-10x-x-109">TRUE</span><span 
 class="rm-lmtt-10x-x-109">)</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
- id="x1-12002r2"></a></span><span 
+ id="x1-14002r2"></a></span><span 
 class="rm-lmtt-10x-x-109">init</span><span 
 class="rm-lmtt-10x-x-109">()</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
- id="x1-12003r3"></a></span><span 
+ id="x1-14003r3"></a></span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
- id="x1-12004r4"></a></span><span 
+ id="x1-14004r4"></a></span><span 
 class="rm-lmtt-10x-x-109">x</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><span 
 class="rm-lmtt-10x-x-109">¡-</span><span 
@@ -764,9 +1060,9 @@ class="rm-lmtt-10x-x-109">.</span><span
 class="rm-lmtt-10x-x-109">rank</span><span 
 class="rm-lmtt-10x-x-109">()</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
- id="x1-12005r5"></a></span><span 
+ id="x1-14005r5"></a></span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
- id="x1-12006r6"></a></span><span 
+ id="x1-14006r6"></a></span><span 
 class="rm-lmtt-10x-x-109">comm</span><span 
 class="rm-lmtt-10x-x-109">.</span><span 
 class="rm-lmtt-10x-x-109">print</span><span 
@@ -783,33 +1079,33 @@ class="rm-lmtt-10x-x-109">&#x00A0;</span><span
 class="rm-lmtt-10x-x-109">TRUE</span><span 
 class="rm-lmtt-10x-x-109">)</span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
- id="x1-12007r7"></a></span><span 
+ id="x1-14007r7"></a></span><span 
 class="rm-lmtt-10x-x-109">&#x00A0;</span><br /><span class="label"><a 
- id="x1-12008r8"></a></span><span 
+ id="x1-14008r8"></a></span><span 
 class="rm-lmtt-10x-x-109">finalize</span><span 
 class="rm-lmtt-10x-x-109">()</span>
-                                                                                             
-                                                                                             
 </div>
 <!--l. 23--><p class="noindent" >To run the script, you must do so in batch (i.e., non-interactively). First save its contents to
 the file <span 
 class="rm-lmtt-10x-x-109">my&#x02D9;script.r</span>, and then open a command prompt. On Windows, you should execute the
 command:
 <!--l. 34--><pre class="listings">&#x00A0;<br /><span class="label"><a 
- id="x1-12009r1"></a></span>mpiexec.exe&#x00A0;<span 
+ id="x1-14009r1"></a></span>mpiexec.exe&#x00A0;<span 
 class="lmsy-10x-x-109">-</span>np&#x00A0;2&#x00A0;Rscript&#x00A0;my_script.r
 &#x00A0;<br /><span class="label"><a 
- id="x1-12010r2"></a></span></pre>
+ id="x1-14010r2"></a></span></pre>
+                                                                                             
+                                                                                             
 <!--l. 1--><p class="noindent" >
 <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
- id="x1-130005"></a>Installation Problems<hr></h3>
+ id="x1-150005"></a>Installation Problems<hr></h3>
 <!--l. 3--><p class="noindent" >During the course of installation, you may run into unrecoverable issues. The pbdR team does not support
 MPI libraries or R core, so if you have problems during that portion of the installation phase, we probably can
 not directly help you. However, there are still many great resources at your disposal, maintained by those
 individual projects.
 <!--l. 5--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">5.1   </span> <a 
- id="x1-140005.1"></a>R and MPI</h4>
+ id="x1-160005.1"></a>R and MPI</h4>
 <!--l. 7--><p class="noindent" >If you have problems installing or customizing R, see the <span 
 class="rm-lmri-10x-x-109">R Installation and Administration Manual </span>at
 <a 
@@ -825,7 +1121,7 @@ class="rm-lmtt-10x-x-109">http://www.mpich.org/documentation/guides/</span></a> 
 <!--l. 11--><p class="noindent" >For the remainder, we will be addressing installation issues with pbdR packages.
 <!--l. 13--><p class="noindent" >
 <h4 class="subsectionHead"><span class="titlemark">5.2   </span> <a 
- id="x1-150005.2"></a>pbdR</h4>
+ id="x1-170005.2"></a>pbdR</h4>
 <!--l. 15--><p class="noindent" >This is a quick list of potential problems you could encounter when installing pbdR packages. For additional
 troubleshooting or installation options, each package has a vignette which may offer additional useful
 information.
@@ -835,10 +1131,10 @@ class="rm-lmbx-10x-x-109">When compiling pbdMPI from source</span>, you may be r
      compile time. So for example, if you have OpenMPI installed and were installing from the command line,
      then you would issue the command:
      <!--l. 19--><pre class="listings">&#x00A0;<br /><span class="label"><a 
- id="x1-15001r1"></a></span>R&#x00A0;CMD&#x00A0;INSTALL&#x00A0;pbdMPI_0.1<span 
+ id="x1-17001r1"></a></span>R&#x00A0;CMD&#x00A0;INSTALL&#x00A0;pbdMPI_0.1<span 
 class="lmsy-10x-x-109">-</span>6.tar.gz&#x00A0;<span 
 class="lmsy-10x-x-109">\</span>&#x00A0;<br /><span class="label"><a 
- id="x1-15002r2"></a></span>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span 
+ id="x1-17002r2"></a></span>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;<span 
 class="lmsy-10x-x-109">-</span><span 
 class="lmsy-10x-x-109">-</span>configure<span 
 class="lmsy-10x-x-109">-</span>args=&#8217;<span 
@@ -847,12 +1143,10 @@ class="lmsy-10x-x-109">-</span>with<span
 class="lmsy-10x-x-109">-</span>Rmpi<span 
 class="lmsy-10x-x-109">-</span>type=OPENMPI&#8217;
      &#x00A0;<br /><span class="label"><a 
- id="x1-15003r3"></a></span></pre>
+ id="x1-17003r3"></a></span></pre>
      <!--l. 23--><p class="noindent" >or if installing from R: <!--l. 24-->
-                                                                                             
-                                                                                             
-     <div class="lstlisting" id="listing-4"><span class="label"><a 
- id="x1-15004r1"></a></span><span 
+     <div class="lstlisting" id="listing-7"><span class="label"><a 
+ id="x1-17004r1"></a></span><span 
 class="rm-lmtt-10x-x-109">install</span><span 
 class="rm-lmtt-10x-x-109">.</span><span 
 class="rm-lmtt-10x-x-109">packages</span><span 
@@ -884,17 +1178,19 @@ class="rm-lmtt-10x-x-109">mpirun</span>, then pass the install option <span
 class="rm-lmtt-10x-x-109">--no-test-load</span>. So for example, if installing from the command
      line, then you would issue the command:
      <!--l. 31--><pre class="listings">&#x00A0;<br /><span class="label"><a 
- id="x1-15005r1"></a></span>R&#x00A0;CMD&#x00A0;INSTALL&#x00A0;pbdMPI_0.1<span 
+ id="x1-17005r1"></a></span>R&#x00A0;CMD&#x00A0;INSTALL&#x00A0;pbdMPI_0.1<span 
 class="lmsy-10x-x-109">-</span>6.tar.gz&#x00A0;<span 
 class="lmsy-10x-x-109">-</span><span 
 class="lmsy-10x-x-109">-</span>no<span 
 class="lmsy-10x-x-109">-</span>test<span 
 class="lmsy-10x-x-109">-</span>load
      &#x00A0;<br /><span class="label"><a 
- id="x1-15006r2"></a></span></pre>
+ id="x1-17006r2"></a></span></pre>
+                                                                                             
+                                                                                             
      <!--l. 34--><p class="noindent" >or if installing from R: <!--l. 35-->
-     <div class="lstlisting" id="listing-5"><span class="label"><a 
- id="x1-15007r1"></a></span><span 
+     <div class="lstlisting" id="listing-8"><span class="label"><a 
+ id="x1-17007r1"></a></span><span 
 class="rm-lmtt-10x-x-109">install</span><span 
 class="rm-lmtt-10x-x-109">.</span><span 
 class="rm-lmtt-10x-x-109">packages</span><span 
