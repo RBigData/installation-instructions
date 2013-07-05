@@ -5,8 +5,6 @@ Officially, the pbdR team does not support gaming consoles (only kidding!).  Jok
 If you are completely new to \proglang{R}, then you may find the \href{http://cran.r-project.org/bin/windows/base/rw-FAQ.html}{R for Windows FAQ} useful.  Additionally, there is also an \href{http://cran.r-project.org/doc/FAQ/R-FAQ.html}{R FAQ} which may also be useful for those who know very little about \proglang{R}.  To learn more about programming with \proglang{R}, then you may find the \href{http://cran.us.r-project.org/doc/manuals/R-intro.html}{Introduction to R} guide useful.
 
 
-
-
 \subsection{Installing R}
 
 
@@ -126,6 +124,8 @@ Before proceeding, please be aware that this installation requires {\color{red}{
 
 Unfortunately, we do not distribute pbdR binary packages on the CRAN for Windows.  This means that you must install our packages from source on Windows, and the process may be foreign.  We will present two approaches; the short way, installing from github using the \pkg{devtools} package, and a longer way, installing from a downloaded source file.  However, do be aware that each of these methods requires the installation of the Rtools package from Section~\ref{inst:rtools} (so that step cannot be skipped).
 
+Finally, we note that it may not be possible to install the \pkg{pbdNCDF4} package on Windows.  We have not tested this and, assuming it is possible, it would be very difficult to get NetCDF4 compiled in parallel first.  If you have success installing this package on Windows, we would love to hear from you.
+
 
 \subsubsection{Installing from Github}
 
@@ -146,7 +146,6 @@ library(devtools)
 
 install_github(repo="pbdMPI", username="RBigData")
 install_github(repo="pbdSLAP", username="RBigData")
-install_github(repo="pbdNCDF4", username="RBigData")
 install_github(repo="pbdBASE", username="RBigData")
 install_github(repo="pbdDMAT", username="RBigData")
 install_github(repo="pbdDEMO", username="RBigData")
@@ -158,7 +157,6 @@ You can also install \emph{really} new package builds, which will be very curren
 # dev repo 1
 install_github(repo="pbdMPI", username="snoweye")
 install_github(repo="pbdSLAP", username="snoweye")
-install_github(repo="pbdNCDF4", username="snoweye")
 # dev repo 2
 install_github(repo="pbdBASE", username="wrathematics")
 install_github(repo="pbdDMAT", username="wrathematics")
