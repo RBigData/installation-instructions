@@ -13,24 +13,19 @@ lib <- ""
 
 # Set to TRUE if installing from nodes which can't load MPI
 no.test.load <- FALSE
-
 # Check if the package needs to be installed or not
 check.cran.version <- FALSE
 
 
-
 ### pbdMPI settings
 mpi.type <- "OPENMPI"
-
 # Root path of your MPI library
 mpi.loc <- ""
-
 
 
 ### NetCDF4 settings
 # parallel NetCDF4
 enable.parallel <- TRUE
-
 # Location of nc-config --- you may need to specify this manually
 nc.config.loc <- ""
 
