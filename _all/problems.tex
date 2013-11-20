@@ -18,11 +18,11 @@ This is a quick list of potential problems you could encounter when installing p
   \item \textbf{When compiling pbdMPI from source}, you may be required to pass a configure argument at compile time.  So for example, if you have OpenMPI installed and were installing from the command line, then you would issue the command:
 \begin{Code}
 R CMD INSTALL pbdMPI_0.1-6.tar.gz \
-        --configure-args='--with-Rmpi-type=OPENMPI'
+        --configure-args='--with-mpi-type=OPENMPI'
 \end{Code}
   or if installing from R:
   \begin{lstlisting}[language=rr]
-install.packages("pbdMPI", configure.args='--with-Rmpi-type=OPENMPI')
+install.packages("pbdMPI", configure.args='--with-mpi-type=OPENMPI')
 \end{lstlisting}
   See the \pkg{pbdMPI} vignette for more details.
 
