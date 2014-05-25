@@ -14,5 +14,13 @@ bibtex installation
 pdflatex installation
 pdflatex installation
 pdflatex installation
-del installation.aux installation.idx installation.out
-del installation.toc installation.bbl installation.blg installation.log
+
+del *.aux *.log *.toc *.bbl *.blg *.out *.idx
+del linux\*.aux linux\*.log linux\*.toc
+del linux\*.bbl linux\*.blg linux\*.out linux\*.idx
+del mac\*.aux mac\*.log mac\*.toc
+del mac\*.bbl mac\*.blg mac\*.out mac\*.idx
+del windows\*.aux windows\*.log windows\*.toc
+del windows\*.bbl windows\*.blg windows\*.out windows\*.idx
+del _all\*.aux _all\*.log _all\*.toc
+del _all\*.bbl _all\*.blg _all\*.out _all\*.idx

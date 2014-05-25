@@ -89,3 +89,12 @@ elif [ "$1" = "linux" ]; then
 else
   echo "Error : you must specify compilation for all, win, mac, or linux"
 fi
+
+
+find ./ | grep "\.aux" | xargs rm
+find ./ | grep "\.log" | xargs rm
+find ./ | grep "\.toc" | xargs rm
+find ./ | grep "\.bbl" | xargs rm
+find ./ | grep "\.blg" | xargs rm
+find ./ | grep "\.out" | xargs rm
+find ./ | grep "\.idx" | xargs rm
