@@ -1,0 +1,11 @@
+*~
+*.swp
+*.tex.backup
+
+*.aux
+*.bbl
+*.blg
+*.out
+*.toc
+
+build/
