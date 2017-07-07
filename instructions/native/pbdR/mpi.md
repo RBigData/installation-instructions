@@ -1,14 +1,13 @@
-# pbdR Pre-reqs
+# MPI
 
-## MPI
+In addition to all of the previous requirements, you will need to have an MPI installation available in order to build and run pbdR packages.
 
-### Windows
 
+## Windows
 Install [MS-MPI](https://msdn.microsoft.com/en-us/library/bb524831(v=vs.85).aspx)
 
 
-### Mac
-
+## Mac
 We recommend OpenMPI:
 
 * From [Homebrew](https://brew.sh/): enter `brew install open-mpi` in a terminal
@@ -17,9 +16,8 @@ We recommend OpenMPI:
 
 
 
-### Linux/FreeBSD
-
-We recommend [OpenMPI](https://www.open-mpi.org/software/ompi/v2.1/), which is likely available from your package manager:
+## Linux/FreeBSD
+We recommend OpenMPI, which is likely available from your package manager:
 
 * deb (Debian, Ubuntu): `apt-get install libopenmpi-dev`
 * rpm (Fedora, Centos): `yum install openmpi-devel`
