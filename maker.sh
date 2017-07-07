@@ -14,7 +14,7 @@ makeBody(){
   shift
   
   cat ../instructions/$1 > $out
-  echo "\newpage" >> $out
+  echo '\\newpage \n' >> $out
   shift
   
   for f in $@; do
@@ -30,7 +30,7 @@ makeNativeInstr(){
     native/front.md \
     native/basics/R.md \
     native/basics/packages.md \
-    native/pbdR/prereqs.md \
+    native/pbdR/mpi.md \
     native/pbdR/pbdR.md
   
   cat ../instructions/native/problems.md >> native.md

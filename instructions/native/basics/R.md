@@ -1,15 +1,11 @@
 # R and RStudio
 
+At a minimum, you will need to install R.  You may also wish to install the popular IDE RStudio.
+
 ## R
-In order to complete the exercises, you will need to have R installed.  You can find R binaries and/or source at http://cran.r-project.org. Installation for Windows and Mac users should be very much like what you are used to.  Linux and *BSD users probably have access to R in their OS's software repository; you can find additional information at the above download link.
+You can find R binaries and/or source at http://cran.r-project.org. Installation for Windows and Mac users should be very much like what you are used to.  Linux and BSD users probably have access to R in their OS's software repository; you can find additional information at the above download link.
 
 If for some reason you need/wish to build R from source, consult the R Installation and Administration manual https://cran.r-project.org/doc/manuals/R-admin.html.
-
-
-
-* deb (Debian, Ubuntu): `apt-get install r-base-dev`
-* rpm (Fedora, Centos): `yum install openmpi-devel`
-* FreeBSD: `pkg install openmpi`
 
 
 
