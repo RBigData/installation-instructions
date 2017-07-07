@@ -1,9 +1,18 @@
 # pbdR Docker Builds
 
-Docker build configurations for the pbdR package ecosystem.  Builds are hosted on [Docker  Hub](https://hub.docker.com/u/rbigdata/).
+Docker build configurations for the pbdR package ecosystem.  Builds are hosted on [Docker Hub](https://hub.docker.com/u/rbigdata/).  You can find the Dockerfiles at [our github repo](https://github.com/RBigData/docker).
 
 
-https://github.com/RBigData/docker
+
+## Workshop/Tutorial
+
+If you are attending a pbdR workshop/tutorial, then you will want to install the pbdr-workshop build.  Simply run:
+
+```bash
+sudo docker run -i -t rbigdata/pbdr-workshop
+```
+
+You can interact with the running container in the same way as outlined in the "Compute" subsection below.  To learn how to access files from your host machine, see the previous section.
 
 
 
