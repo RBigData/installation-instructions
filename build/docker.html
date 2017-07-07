@@ -1,0 +1,55 @@
+
+<h1 id="installing-docker">Installing Docker</h1>
+<p>Before proceeding, you must first install Docker on your system. This is either painless or completely impossible, depending on what OS version you are running.</p>
+<h2 id="windows">Windows</h2>
+<p>Windows 10 or later is required. If you are not sure which version of windows you are running, see the Microsoft support article <a href="https://support.microsoft.com/en-ca/help/13443/windows-which-operating-system">Which Windows operating system am I running</a>.</p>
+<p>If you meet the requirements, then you should install the <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description">Docker Community Edition for Windows</a>. There are also <a href="https://docs.docker.com/docker-for-windows/#explore-the-application-and-run-examples">detailed installation instructions</a> available if something goes wrong.</p>
+<h2 id="mac">Mac</h2>
+<p>OS X El Capitan 10.11 or later is required. If you are not sure which version of OS X / macOS you are running, see the Apple support article <a href="https://support.apple.com/en-us/HT201260">Find the macOS version number on your Mac</a>.</p>
+<p>If you meet the requirements, then you should install the <a href="https://store.docker.com/editions/community/docker-ce-desktop-mac?tab=description">Docker Community Edition for Mac</a>. There are also <a href="https://docs.docker.com/docker-for-mac/">detailed installation instructions</a> available if something goes wrong.</p>
+<h2 id="linux">Linux</h2>
+<p>Many modern distributions have Docker packages available in the software repository. For example:</p>
+<ul>
+<li>deb (Debian, Ubuntu): <code>apt-get install docker.io</code></li>
+<li>rpm (Fedora, Centos): <code>yum install docker-io</code></li>
+</ul>
+<p>If your distribution does not have Docker available in the repo, try searching the <a href="https://store.docker.com/search?offering=community&amp;type=edition">Docker Community Editions</a>.</p>
+<h1 id="using-docker">Using Docker</h1>
+<h2 id="basics">Basics</h2>
+<p>Generally working with someone else's docker container is pretty simple (building your own can be another matter entirely). Most often you will enter a <code>docker run</code> command at the command line and then interact with the container either at the command line, or via a web service or the like.</p>
+<p>There is a &quot;hello world&quot; test you can run to make sure that everything is working. Simply enter:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> run hello-world</code></pre></div>
+<p>and you should see a quick bit out output explaining that everything worked properly. If you get an error like <code>Cannot connect to the Docker daemon</code>, then you need to run the container as an administrator.</p>
+<p>For more information, you are encouraged to read the <a href="https://docs.docker.com/get-started/">orientation and setup guide</a> from the official Docker documentation.</p>
+<h2 id="mounting-host-directories">Mounting Host Directories</h2>
+<p>You will probably want to be able to access files from your &quot;host&quot; system (not the container) inside of the container. Fortunately, this is not difficult to do. All you need to do is add a simple flag to your launch command. Namely, you add: <code>-v HOST_DIRECTORY:CONTAINER_DIRECTORY</code>, where of course the &quot;host&quot; and &quot;container&quot; directories are actual paths.</p>
+<p>So for example, say you want to launch the workshop container described in the next section. The instructions say to run:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> docker run -i -t rbigdata/pbdr-workshop</code></pre></div>
+<p>But say you want to connect the host directory <code>/tmp/docker/</code> (something like <code>c:\tmp\docker</code> on windows) to <code>/home/pbdR/</code> on the container. You could run:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> docker run -i -t -v /tmp/docker:/home/pbdR rbigdata/pbdr-workshop</code></pre></div>
+<p>Then any file you put into your directory on your host system will be available at the home directory. For more details, see <a href="https://docs.docker.com/engine/tutorials/dockervolumes/#mount-a-host-directory-as-a-data-volume">the official Docker documentation</a>.</p>
+<h1 id="pbdr-docker-builds">pbdR Docker Builds</h1>
+<p>Docker build configurations for the pbdR package ecosystem. Builds are hosted on <a href="https://hub.docker.com/u/rbigdata/">Docker Hub</a>. You can find the Dockerfiles at <a href="https://github.com/RBigData/docker">our github repo</a>.</p>
+<h2 id="workshoptutorial">Workshop/Tutorial</h2>
+<p>If you are attending a pbdR workshop/tutorial, then you will want to install the pbdr-workshop build. Simply run:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> docker run -i -t rbigdata/pbdr-workshop</code></pre></div>
+<p>You can interact with the running container in the same way as outlined in the &quot;Compute&quot; subsection below. To learn how to access files from your host machine, see the previous section.</p>
+<h2 id="compute">Compute</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> docker run -i -t rbigdata/pbdr-compute</code></pre></div>
+<p>Create your pbdR script as usual and run it via mpirun. Take this simple &quot;hello world&quot; for example:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressPackageStartupMessages</span>(<span class="kw">library</span>(pbdMPI))
+
+<span class="kw">comm.print</span>(
+  <span class="kw">paste</span>(<span class="st">&quot;Hello from rank&quot;</span>, <span class="kw">comm.rank</span>(), <span class="st">&quot;of&quot;</span>, <span class="kw">comm.size</span>()),
+  <span class="dt">all.rank=</span><span class="ot">TRUE</span>
+)
+
+<span class="kw">finalize</span>()</code></pre></div>
+<p>Then run the script via:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">mpirun</span> -np 2 r myscript.r</code></pre></div>
+<h2 id="clientserver">Client/Server</h2>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> docker run -i -t -p 55555:55555 rbigdata/pbdr-cs</code></pre></div>
+<p>To connect to the server, you will need to install the <code>remoter</code> package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;remoter&quot;</span>)</code></pre></div>
+<p>Then from your local R or RStudio session, you can connect to the server by running:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">remoter::<span class="kw">client</span>()</code></pre></div>

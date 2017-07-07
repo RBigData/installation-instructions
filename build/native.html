@@ -1,0 +1,114 @@
+
+<h1 id="r-and-rstudio">R and RStudio</h1>
+<p>At a minimum, you will need to install R. You may also wish to install the popular IDE RStudio.</p>
+<h2 id="r">R</h2>
+<p>You can find R binaries and/or source at http://cran.r-project.org. Installation for Windows and Mac users should be very much like what you are used to. Linux and BSD users probably have access to R in their OS's software repository; you can find additional information at the above download link.</p>
+<p>If for some reason you need/wish to build R from source, consult the R Installation and Administration manual https://cran.r-project.org/doc/manuals/R-admin.html.</p>
+<h2 id="compilers">Compilers</h2>
+<p>Finally, if you wish to be able to build packages from source, then you need to install some additional things.</p>
+<ul>
+<li>Windows: Install Rtools http://cran.r-project.org/bin/windows/Rtools/</li>
+<li>Mac:
+<ul>
+<li>First install XCode from the Mac App Store</li>
+<li>Then, open XCode and choose &quot;Preferences&quot;, &quot;Downloads&quot;, then &quot;Install Command Line Tools&quot;.</li>
+<li><a href="https://cran.r-project.org/bin/macosx/tools/">gfortran</a></li>
+</ul></li>
+<li>Linux/FreeBSD: You need C and Fortran compilers, which you may well already have installed. Consult your distribution's package manager.</li>
+</ul>
+<h2 id="rstudio-optional">RStudio (Optional)</h2>
+<p>R is supported in just about every text editor and multi-language IDE these days. However, much of the R community uses the RStudio Desktop IDE http://www.rstudio.com/products/rstudio/download/. It has binaries for Windows, Mac, and Linux. You can even install a server version running on a remote instance, and it looks/behaves much the same as the desktop version.</p>
+<p>RStudio is probably the most popular editor used in the R community, so even if you prefer another editor/ide, it is still useful to get a sense for the tools that R users find most appealing. Installing RStudio is optional. But if you install it, you still need to install R separately as explained above.</p>
+<h1 id="r-packages">R Packages</h1>
+<h2 id="cran-packages">CRAN Packages</h2>
+<p>Most packages you will want to install are available on the Comprehensive R Archive Network (CRAN).<br />
+To install a package named <code>pkg</code> (including automatically handling dependency resolution), start up an R session and enter</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;pkg&quot;</span>)</code></pre></div>
+<p>Two packages which are very useful for the performance minded are:</p>
+<ul>
+<li>rbenchmark</li>
+<li>microbenchmark</li>
+</ul>
+<p>You could install these by running:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;rbenchmark&quot;</span>, <span class="st">&quot;microbenchmark&quot;</span>))</code></pre></div>
+<h2 id="github-packages">GitHub Packages</h2>
+<p>There is a lot of exciting work on GitHub in the R world. Many people who publish their packages on CRAN maintain development versions on GitHub. So if you want the latest version, you need to install from GitHub. There are some packages that help with this effort, but to use them, you will need to first install some additional software. Follow the instructions in the Compilers subsection from the previous section if you have not already.</p>
+<p>Once you have the necessary tools installed, you can simplify the process of installing a package from GitHub with an additional package. First run:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</code></pre></div>
+<p>in an R session. Then to install a package from GitHub, you simply run:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">remotes::<span class="kw">install_github</span>(<span class="st">&quot;pkg&quot;</span>)</code></pre></div>
+<h1 id="mpi">MPI</h1>
+<p>In addition to all of the previous requirements, you will need to have an MPI installation available in order to build and run pbdR packages.</p>
+<h2 id="windows">Windows</h2>
+<p>Install <a href="https://msdn.microsoft.com/en-us/library/bb524831(v=vs.85).aspx">MS-MPI</a></p>
+<h2 id="mac">Mac</h2>
+<p>We recommend OpenMPI:</p>
+<ul>
+<li>From <a href="https://brew.sh/">Homebrew</a>: enter <code>brew install open-mpi</code> in a terminal</li>
+<li>From <a href="https://www.macports.org/%7D%7BMacPorts">MacPorts</a>: enter <code>sudo port install openmpi</code> in a terminal</li>
+<li>You can also <a href="https://www.open-mpi.org/software/ompi/v2.1/">build from source</a></li>
+</ul>
+<h2 id="linuxfreebsd">Linux/FreeBSD</h2>
+<p>We recommend OpenMPI, which is likely available from your package manager:</p>
+<ul>
+<li>deb (Debian, Ubuntu): <code>apt-get install libopenmpi-dev</code></li>
+<li>rpm (Fedora, Centos): <code>yum install openmpi-devel</code></li>
+<li>FreeBSD: <code>pkg install openmpi</code></li>
+</ul>
+<p>You can also <a href="https://www.open-mpi.org/software/ompi/v2.1/">build from source</a>.</p>
+<h1 id="pbdr">pbdR</h1>
+<p>For more explanations of any individual package, see <a href="https://rbigdata.github.io/packages.html">the pbdR packages site</a>.</p>
+<h2 id="compute">Compute</h2>
+<p>For the MPI compute tools, you will want to install:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;pbdMPI&#39;</span>)
+<span class="kw">install.packages</span>(<span class="st">&#39;pbdDMAT&#39;</span>)
+<span class="kw">install.packages</span>(<span class="st">&#39;pmclust&#39;</span>)
+<span class="kw">install.packages</span>(<span class="st">&#39;kazaam&#39;</span>)</code></pre></div>
+<p>If you want the latest versions of all packages and their dependencies (including a few not yet on CRAN), run:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install_github</span>(<span class="st">&#39;RBigData/pbdMPI&#39;</span>)
+<span class="kw">install_github</span>(<span class="st">&#39;RBigData/pbdSLAP&#39;</span>)
+<span class="kw">install_github</span>(<span class="st">&#39;RBigData/pbdBASE&#39;</span>)
+<span class="kw">install_github</span>(<span class="st">&#39;RBigData/pbdDMAT&#39;</span>)
+<span class="kw">install_github</span>(<span class="st">&#39;RBigData/pbdML&#39;</span>)
+<span class="kw">install_github</span>(<span class="st">&#39;RBigData/pmclust&#39;</span>)
+<span class="kw">install_github</span>(<span class="st">&#39;RBigData/kazaam&#39;</span>)</code></pre></div>
+<h2 id="io">I/O</h2>
+<p>For a useful, general purpose parallel I/O tool, install:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install_github</span>(<span class="st">&#39;RBigData/pbdIO&#39;</span>)</code></pre></div>
+<p>If you have netcdf4 installed, you may want:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;pbdNCDF4&#39;</span>)</code></pre></div>
+<p>If you use the ADIOS system, then you may want:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install_github</span>(<span class="st">&#39;RBigData/pbdADIOS&#39;</span>)</code></pre></div>
+<h2 id="clientserver">Client/Server</h2>
+<p>For a basic client/server setup, install:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;remoter&quot;</span>)</code></pre></div>
+<p>For the latest, including an MPI client/server, install:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install_github</span>(<span class="st">&quot;RBigData/remoter&quot;</span>)
+<span class="kw">install_github</span>(<span class="st">&quot;RBigData/pbdCS&quot;</span>)</code></pre></div>
+<h2 id="profiling">Profiling</h2>
+<p>For MPI profiling, you will want:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;pbdPROF&quot;</span>)</code></pre></div>
+<p>This will require a re-build of pbdMPI with some additional compiler flags. See the <a href="https://cran.r-project.org/web/packages/pbdMPI/vignettes/pbdMPI-guide.pdf">pbdMPI vignette</a> for details.</p>
+<p>For hardware counter profiling (NOTE: Linux only), install:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install_github</span>(<span class="st">&quot;RBigData/pbdPAPI&quot;</span>)</code></pre></div>
+<p>Finally, for a suite of profiling and vis tools that enhance pbdPROF and pbdPAPI, install:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install_github</span>(<span class="st">&quot;RBigData/hpcvis&quot;</span>)</code></pre></div>
+<h1 id="installation-problems">Installation Problems</h1>
+<p>During the course of installation, you may run into unrecoverable issues. The pbdR team does not support MPI libraries or R core, so if you have problems during that portion of the installation phase, we probably can not directly help you. However, there are still many great resources at your disposal, maintained by those individual projects.</p>
+<h2 id="r-and-mpi">R and MPI</h2>
+<p>If you have problems installing or customizing R, see the <em>[R Installation and Administration Manual]</em>(http://cran.r-project.org/doc/manuals/R-admin.html) for help.</p>
+<p>If you are having trouble installing an MPI library, such as <a href="http://www.open-mpi.org/community/help/">OpenMPI</a> or <a href="http://www.mpich.org/documentation/guides/">MPICH</a>, you should see that library's official documentation.</p>
+<p>For the remainder, we will be addressing installation issues with pbdR packages.</p>
+<h2 id="pbdr-1">pbdR</h2>
+<p>This is a quick list of potential problems you could encounter when installing pbdR packages. For additional troubleshooting or installation options, each package has a vignette which may offer additional useful information.</p>
+<ul>
+<li><p><strong>Compiling pbdMPI from source</strong>: you may be required to pass a configure argument at compile time. So for example, if you have OpenMPI installed and were installing from the command line, then you would issue the command:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">R</span> CMD INSTALL pbdMPI_0.1-6.tar.gz  --configure-args=<span class="st">&#39;--with-mpi-type=OPENMPI&#39;</span></code></pre></div>
+<p>or if installing from R:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;pbdMPI&quot;</span>, <span class="dt">configure.args=</span><span class="st">&#39;--with-mpi-type=OPENMPI&#39;</span>)</code></pre></div>
+<p>See the <strong>pbdMPI</strong> vignette for more details.</p></li>
+<li><p><strong>Installing on a cluster</strong>: if you are required to install on a login node which can not execute <code>mpirun</code>, then pass the install option <code>--no-test-load</code>. So for example, if installing from the command line, then you would issue the command:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">R</span> CMD INSTALL pbdMPI_0.1-6.tar.gz --no-test-load</code></pre></div>
+<p>or if installing from R:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;pbdMPI&quot;</span>, <span class="dt">INSTALL_opts=</span><span class="st">&#39;--no-test-load&#39;</span>)</code></pre></div></li>
+</ul>
