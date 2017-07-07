@@ -15,7 +15,7 @@ If for some reason you need/wish to build R from source, consult the R Installat
 
 
 ## Compilers
-Finally, if you wish to be able to build packages from source, then you need to install some additional things.  This is not strictly necessary, although there is a very active community of R developers on GitHub, who do not submit their packages to CRAN (which distributes binaries for Windows+Mac).  This is optional for this lab, though encouraged if you use R regularly.
+Finally, if you wish to be able to build packages from source, then you need to install some additional things.
 
 * Windows: Install Rtools http://cran.r-project.org/bin/windows/Rtools/
 * Mac: 
